@@ -1,20 +1,20 @@
 # Build stage
 FROM mohamedfrix/cpp-base-image:latest AS builder
 
-# Configure apt to use IPv4
-RUN echo 'Acquire::ForceIPv4 "true";' > /etc/apt/apt.conf.d/99force-ipv4
-
 # Avoid prompts during package installation
 ENV DEBIAN_FRONTEND=noninteractive
 
-
+# Ensure gRPC source is available
+RUN test -d /opt/grpc || (echo "gRPC source not found in base image" && exit 1)
 
 # Build application
 WORKDIR /app
 COPY . .
-RUN mkdir -p build
+RUN mkdir -p build  
 WORKDIR /app/build
-RUN cmake .. -DCMAKE_TOOLCHAIN_FILE=/opt/vcpkg/scripts/buildsystems/vcpkg.cmake && \
+RUN cmake .. \
+    -DCMAKE_TOOLCHAIN_FILE=/opt/vcpkg/scripts/buildsystems/vcpkg.cmake \
+    -DGRPC_AS_SUBMODULE=ON && \
     cmake --build . --config Release
 
 # Runtime stage
