@@ -1,0 +1,397 @@
+syntax = "proto3";
+
+package accounts;
+
+import "google/protobuf/struct.proto";
+
+// Service Options
+option go_package = "github.com/your-org/accounts-service/proto";
+option java_multiple_files = true;
+option java_package = "com.accounts.service";
+option java_outer_classname = "AccountsServiceProto";
+
+//------------------------------------------------------------------------------
+// Common Messages
+//------------------------------------------------------------------------------
+
+// FileData represents a file upload with its content and metadata
+message FileData {
+    bytes content = 1;              // The actual file content
+    string content_type = 2;        // MIME type of the file
+}
+
+//------------------------------------------------------------------------------
+// Common Messages
+//------------------------------------------------------------------------------
+
+// School represents an educational institution
+message School {
+    int32 id = 1;                    // Unique identifier for the school
+    string name = 2;                 // Full name of the school
+    string name_abbr = 3;           // Abbreviated name of the school
+    string location = 4;            // Physical location of the school
+    string created_at = 5;          // Timestamp when the record was created
+}
+
+// Student represents a student account with their basic information
+message Student {
+    int32 id = 1;                                // Unique identifier for the student
+    int32 user_id = 2;                          // Reference to the user account
+    School school = 3;                          // Associated school information
+    string graduation_year = 4;                 // Expected year of graduation
+    string wilaya = 5;                         // Administrative region/province
+    string profile_picture_path = 6;           // Path to the main profile picture
+    string secondary_profile_picture_path = 7;  // Path to the secondary profile picture
+    string created_at = 8;                     // Timestamp when the record was created
+}
+
+// Researcher represents a research professional account
+message Researcher {
+    int32 id = 1;                                // Unique identifier for the researcher
+    int32 user_id = 2;                          // Reference to the user account
+    string wilaya = 3;                         // Administrative region/province
+    string profile_picture_path = 4;           // Path to the main profile picture
+    string secondary_profile_picture_path = 5;  // Path to the secondary profile picture
+    string created_at = 6;                     // Timestamp when the record was created
+}
+
+// StudentProfile contains additional profile information for students
+message StudentProfile {
+    int32 id = 1;                              // Unique identifier for the profile
+    int32 student_id = 2;                      // Reference to the student account
+    google.protobuf.Struct profile_data = 3;   // Flexible JSON structure for profile data
+}
+
+//------------------------------------------------------------------------------
+// Student Service
+//------------------------------------------------------------------------------
+
+// Service for managing student accounts and related operations
+service StudentService {
+    // Creates a new student account
+    rpc CreateStudent(CreateStudentRequest) returns (CreateStudentResponse) {}
+    
+    // Retrieves student information by ID
+    rpc GetStudent(GetStudentRequest) returns (GetStudentResponse) {}
+    
+    // Retrieves student information by user ID
+    rpc GetStudentByUserId(GetStudentByUserIdRequest) returns (GetStudentByUserIdResponse) {}
+    
+    // Updates existing student information
+    rpc UpdateStudent(UpdateStudentRequest) returns (UpdateStudentResponse) {}
+    
+    // Deletes a student account
+    rpc DeleteStudent(DeleteStudentRequest) returns (DeleteStudentResponse) {}
+    
+    // Lists all students
+    rpc ListStudents(ListStudentsRequest) returns (ListStudentsResponse) {}
+}
+
+message CreateStudentRequest {
+    int32 user_id = 1;
+    int32 school_id = 2;
+    string graduation_year = 3;
+    string wilaya = 4;
+    FileData profile_picture = 5;              // Optional profile picture file data
+    FileData secondary_profile_picture = 6;     // Optional secondary profile picture file data
+}
+
+message CreateStudentResponse {
+    bool success = 1;
+    Student student = 2;                       // Includes paths to stored images
+    string error_message = 3;
+}
+
+message GetStudentRequest {
+    int32 id = 1;
+}
+
+message GetStudentResponse {
+    Student student = 1;
+    string error_message = 2;
+    bool success = 3; // Indicates if the retrieval was successful
+}
+
+message GetStudentByUserIdRequest {
+    int32 user_id = 1;
+}
+
+message GetStudentByUserIdResponse {
+    Student student = 1;
+    string error_message = 2;
+    bool success = 3; // Indicates if the retrieval was successful
+}
+
+message UpdateStudentRequest {
+    int32 id = 1;
+    optional int32 school_id = 2;
+    optional string graduation_year = 3;
+    optional string wilaya = 4;
+    optional FileData profile_picture = 5;      // Optional new profile picture
+    optional FileData secondary_profile_picture = 6;  // Optional new secondary profile picture
+}
+
+message UpdateStudentResponse {
+    bool success = 1;
+    Student student = 2;                       // Includes updated image paths
+    string error_message = 3;
+}
+
+message DeleteStudentRequest {
+    int32 id = 1;
+}
+
+message DeleteStudentResponse {
+    bool success = 1;
+    string error_message = 2;
+}
+
+message ListStudentsRequest {
+    int32 page_size = 1;
+    int32 page_number = 2;
+}
+
+message ListStudentsResponse {
+    repeated Student students = 1;
+    int32 total_count = 2;
+    string error_message = 3;
+    bool success = 4; // Indicates if the retrieval was successful
+}
+
+//------------------------------------------------------------------------------
+// School Service
+//------------------------------------------------------------------------------
+
+// Service for managing school information
+service SchoolService {
+    // Creates a new school entry
+    rpc CreateSchool(CreateSchoolRequest) returns (CreateSchoolResponse) {}
+    
+    // Retrieves school information by ID
+    rpc GetSchool(GetSchoolRequest) returns (GetSchoolResponse) {}
+    
+    // Retrieves school information by name
+    rpc GetSchoolByName(GetSchoolByNameRequest) returns (GetSchoolByNameResponse) {}
+    
+    // Updates existing school information
+    rpc UpdateSchool(UpdateSchoolRequest) returns (UpdateSchoolResponse) {}
+    
+    // Deletes a school entry
+    rpc DeleteSchool(DeleteSchoolRequest) returns (DeleteSchoolResponse) {}
+    
+    // Lists all schools
+    rpc ListSchools(ListSchoolsRequest) returns (ListSchoolsResponse) {}
+}
+
+message CreateSchoolRequest {
+    string name = 1;
+    string name_abbr = 2;
+    string location = 3;
+}
+
+message CreateSchoolResponse {
+    bool success = 1;
+    School school = 2;
+    string error_message = 3;
+}
+
+message GetSchoolRequest {
+    int32 id = 1;
+}
+
+message GetSchoolResponse {
+    School school = 1;
+    string error_message = 2;
+    bool success = 3; // Indicates if the retrieval was successful
+}
+
+message GetSchoolByNameRequest {
+    string name = 1;
+}
+
+message GetSchoolByNameResponse {
+    School school = 1;
+    string error_message = 2;
+    bool success = 3; // Indicates if the retrieval was successful
+}   
+
+message UpdateSchoolRequest {
+    School school = 1;
+}
+
+message UpdateSchoolResponse {
+    bool success = 1;
+    string error_message = 2;
+}
+
+message DeleteSchoolRequest {
+    int32 id = 1;
+}
+
+message DeleteSchoolResponse {
+    bool success = 1;
+    string error_message = 2;
+}
+
+message ListSchoolsRequest {
+    int32 page_size = 1;
+    int32 page_number = 2;
+}
+
+message ListSchoolsResponse {
+    repeated School schools = 1;
+    int32 total_count = 2;
+    string error_message = 3;
+    bool success = 4; // Indicates if the retrieval was successful
+}
+
+
+//------------------------------------------------------------------------------
+// Researcher Service
+//------------------------------------------------------------------------------
+
+// Service for managing researcher accounts
+service ResearcherService {
+    // Creates a new researcher account
+    rpc CreateResearcher(CreateResearcherRequest) returns (CreateResearcherResponse) {}
+    
+    // Retrieves researcher information by ID
+    rpc GetResearcher(GetResearcherRequest) returns (GetResearcherResponse) {}
+    
+    // Retrieves researcher information by user ID
+    rpc GetResearcherByUserId(GetResearcherByUserIdRequest) returns (GetResearcherByUserIdResponse) {}
+    
+    // Updates existing researcher information
+    rpc UpdateResearcher(UpdateResearcherRequest) returns (UpdateResearcherResponse) {}
+    
+    // Deletes a researcher account
+    rpc DeleteResearcher(DeleteResearcherRequest) returns (DeleteResearcherResponse) {}
+    
+    // Lists all researchers
+    rpc ListResearchers(ListResearchersRequest) returns (ListResearchersResponse) {}
+}
+
+message CreateResearcherRequest {
+    int32 user_id = 1;
+    string wilaya = 2;
+    FileData profile_picture = 3;              // Optional profile picture file data
+    FileData secondary_profile_picture = 4;     // Optional secondary profile picture file data
+}
+
+message CreateResearcherResponse {
+    bool success = 1;
+    Researcher researcher = 2;                 // Includes paths to stored images
+    string error_message = 3;
+}
+
+message GetResearcherRequest {
+    int32 id = 1;
+}
+
+message GetResearcherResponse {
+    Researcher researcher = 1;
+    string error_message = 2;
+    bool success = 3; // Indicates if the retrieval was successful
+}
+
+message GetResearcherByUserIdRequest {
+    int32 user_id = 1;
+}
+
+message GetResearcherByUserIdResponse {
+    Researcher researcher = 1;
+    string error_message = 2;
+    bool success = 3; // Indicates if the retrieval was successful
+}
+
+message UpdateResearcherRequest {
+    int32 id = 1;
+    optional string wilaya = 2;
+    optional FileData profile_picture = 3;      // Optional new profile picture
+    optional FileData secondary_profile_picture = 4;  // Optional new secondary profile picture
+}
+
+message UpdateResearcherResponse {
+    bool success = 1;
+    Researcher researcher = 2;                 // Includes updated image paths
+    string error_message = 3;
+}
+
+message DeleteResearcherRequest {
+    int32 id = 1;
+}
+
+message DeleteResearcherResponse {
+    bool success = 1;
+    string error_message = 2;
+}
+
+message ListResearchersRequest {
+    int32 page_size = 1;
+    int32 page_number = 2;
+}
+
+message ListResearchersResponse {
+    repeated Researcher researchers = 1;
+    int32 total_count = 2;
+    string error_message = 3;
+    bool success = 4; // Indicates if the retrieval was successful
+}
+
+//------------------------------------------------------------------------------
+// Student Profile Service
+//------------------------------------------------------------------------------
+
+// Service for managing extended student profile information
+service StudentProfileService {
+    // Creates a new student profile
+    rpc CreateStudentProfile(CreateStudentProfileRequest) returns (CreateStudentProfileResponse) {}
+    
+    // Retrieves student profile by ID
+    rpc GetStudentProfile(GetStudentProfileRequest) returns (GetStudentProfileResponse) {}
+    
+    // Updates existing student profile
+    rpc UpdateStudentProfile(UpdateStudentProfileRequest) returns (UpdateStudentProfileResponse) {}
+    
+    // Deletes a student profile
+    rpc DeleteStudentProfile(DeleteStudentProfileRequest) returns (DeleteStudentProfileResponse) {}
+}
+
+message CreateStudentProfileRequest {
+    int32 student_id = 1;
+    google.protobuf.Struct profile_data = 2;
+}
+
+message CreateStudentProfileResponse {
+    bool success = 1;
+    StudentProfile profile = 2;
+    string error_message = 3;
+}
+
+message GetStudentProfileRequest {
+    int32 id = 1;
+}
+
+message GetStudentProfileResponse {
+    StudentProfile profile = 1;
+    string error_message = 2;
+    bool success = 3; // Indicates if the retrieval was successful
+}
+
+message UpdateStudentProfileRequest {
+    StudentProfile profile = 1;
+}
+
+message UpdateStudentProfileResponse {
+    bool success = 1;
+    string error_message = 2;
+}
+
+message DeleteStudentProfileRequest {
+    int32 id = 1;
+}
+
+message DeleteStudentProfileResponse {
+    bool success = 1;
+    string error_message = 2;
+}
