@@ -12,6 +12,11 @@ set(GRPC_AS_SUBMODULE ON)
 set(VCPKG_TARGET_TRIPLET "x64-linux")
 set(CMAKE_FIND_PACKAGE_PREFER_CONFIG ON)
 
+# Set gRPC variables before add_subdirectory
+set(gRPC_BUILD_TESTS OFF)
+set(gRPC_INSTALL OFF)
+set(gRPC_SSL_PROVIDER package)
+
 # Point to your local gRPC clone
 add_subdirectory(
     "/opt/grpc" 
