@@ -6,16 +6,20 @@ include(./common.cmake)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Set vcpkg triplet
+set(GRPC_AS_SUBMODULE ON)
+
+# Exclude OpenSSL from vcpkg auto-linking
 set(VCPKG_TARGET_TRIPLET "x64-linux")
 set(CMAKE_FIND_PACKAGE_PREFER_CONFIG ON)
 
-# Find gRPC package (system installed)
-find_package(gRPC CONFIG REQUIRED)
-find_package(protobuf CONFIG REQUIRED)
-find_package(absl CONFIG REQUIRED)
+# Point to your local gRPC clone
+add_subdirectory(
+    "/opt/grpc" 
+    "${CMAKE_CURRENT_BINARY_DIR}/grpc-build"
+    EXCLUDE_FROM_ALL
+)
 
-# Find other required packages
+# Find packages (avoid OpenSSL from vcpkg)
 find_package(nlohmann_json CONFIG REQUIRED)
 find_package(libpqxx CONFIG REQUIRED)
 find_package(Crow CONFIG REQUIRED)
@@ -54,18 +58,22 @@ set_target_properties(accounts-service PROPERTIES
 
 # Link libraries in specific order
 target_link_libraries(accounts-service PRIVATE 
-    # gRPC and related libraries
+    # gRPC libraries (include BoringSSL internally)
+    gRPC::gpr
+    gRPC::grpc
     gRPC::grpc++
+    gRPC::grpc++_alts
     gRPC::grpc++_reflection
+
+    protobuf::libprotoc
     protobuf::libprotobuf
-    absl::base
-    absl::synchronization
-    absl::strings
+    protobuf::libprotobuf-lite
+
     absl::flags_parse
+    absl::absl_log
     absl::log_initialize
     absl::log_globals
 
-    # Other dependencies
     nlohmann_json::nlohmann_json
     libpqxx::pqxx
     Crow::Crow
@@ -75,8 +83,9 @@ target_link_libraries(accounts-service PRIVATE
     -ldl
 )
 
-# Force linker to prefer system symbols
+# Force linker to prefer gRPC's symbols
 target_link_options(accounts-service PRIVATE
+    -Wl,--allow-multiple-definition
     -Wl,--as-needed
 )
 
