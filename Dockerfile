@@ -22,9 +22,6 @@ WORKDIR /app/build
 # Configure and build with detailed output
 RUN cmake .. \
     -DCMAKE_TOOLCHAIN_FILE=/opt/vcpkg/scripts/buildsystems/vcpkg.cmake \
-    -DGRPC_AS_SUBMODULE=ON \
-    -DCMAKE_PREFIX_PATH="/usr/local;/opt/vcpkg/installed/x64-linux" \
-    -DCMAKE_BUILD_TYPE=Release && \
     cmake --build . --config Release --verbose
 
 # Runtime stage
