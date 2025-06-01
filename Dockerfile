@@ -21,7 +21,7 @@ WORKDIR /app/build
 
 # Configure and build with detailed output
 RUN cmake .. \
-    -DCMAKE_TOOLCHAIN_FILE=/opt/vcpkg/scripts/buildsystems/vcpkg.cmake \
+    -DCMAKE_TOOLCHAIN_FILE=/opt/vcpkg/scripts/buildsystems/vcpkg.cmake &&\
     cmake --build . --config Release --verbose
 
 # Runtime stage
