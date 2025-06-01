@@ -1,10 +1,22 @@
 cmake_minimum_required(VERSION 3.14)
 project(accounts-service VERSION 0.1.0)
 
+# Save current toolchain and unset it for gRPC
+set(SAVED_TOOLCHAIN ${CMAKE_TOOLCHAIN_FILE})
+set(CMAKE_TOOLCHAIN_FILE "")
+
 include(./common.cmake)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# BEFORE add_subdirectory(grpc)
+set(gRPC_SSL_PROVIDER "module" CACHE STRING "" FORCE)
+set(gRPC_ZLIB_PROVIDER "module" CACHE STRING "" FORCE)
+set(gRPC_CARES_PROVIDER "module" CACHE STRING "" FORCE)
+set(gRPC_PROTOBUF_PROVIDER "module" CACHE STRING "" FORCE)
+set(gRPC_RE2_PROVIDER "module" CACHE STRING "" FORCE)
+set(gRPC_ABSL_PROVIDER "module" CACHE STRING "" FORCE)
 
 set(GRPC_AS_SUBMODULE ON)
 
@@ -23,6 +35,9 @@ add_subdirectory(
     "${CMAKE_CURRENT_BINARY_DIR}/grpc-build"
     EXCLUDE_FROM_ALL
 )
+
+# Restore toolchain AFTER gRPC is configured
+set(CMAKE_TOOLCHAIN_FILE ${SAVED_TOOLCHAIN})
 
 # Find packages (avoid OpenSSL from vcpkg)
 find_package(nlohmann_json CONFIG REQUIRED)

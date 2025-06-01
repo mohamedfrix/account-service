@@ -19,11 +19,20 @@ COPY . .
 RUN mkdir -p build
 WORKDIR /app/build
 
+RUN apt-get update
+RUN apt-get install -y linux-libc-dev libsystemd-dev
+
 # Configure and build with detailed output
 RUN cmake .. \
     -DCMAKE_TOOLCHAIN_FILE=/opt/vcpkg/scripts/buildsystems/vcpkg.cmake \
     -DGRPC_AS_SUBMODULE=ON \
-    -DCMAKE_PREFIX_PATH="/usr/local;/opt/vcpkg/installed/x64-linux" \
+    -DgRPC_SSL_PROVIDER=module \
+    -DgRPC_ZLIB_PROVIDER=module \
+    -DgRPC_CARES_PROVIDER=module \
+    -DgRPC_PROTOBUF_PROVIDER=module \
+    -DgRPC_RE2_PROVIDER=module \
+    -DgRPC_ABSL_PROVIDER=module \
+    -DCMAKE_PREFIX_PATH="/usr/local" \
     -DCMAKE_BUILD_TYPE=Release && \
     cmake --build . --config Release --verbose
 
