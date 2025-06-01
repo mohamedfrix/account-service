@@ -6,6 +6,7 @@
 class StudentProfile {
 public:
 
+    StudentProfile() = default;
     StudentProfile(const int id, const int student_id, nlohmann::json profile_data) : 
         id(id), 
         student_id(student_id), 
