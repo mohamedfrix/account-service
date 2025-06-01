@@ -2,8 +2,8 @@
 // If you make any local change, they will be lost.
 // source: accounts_service.proto
 
-#include "message/accounts_service.pb.h"
-#include "grpc/accounts_service.grpc.pb.h"
+#include "./message/accounts_service.pb.h"
+#include "./grpc/accounts_service.grpc.pb.h"
 
 #include <functional>
 #include <grpcpp/support/async_stream.h>

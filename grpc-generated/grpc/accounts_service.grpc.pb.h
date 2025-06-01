@@ -4,7 +4,7 @@
 #ifndef GRPC_accounts_5fservice_2eproto__INCLUDED
 #define GRPC_accounts_5fservice_2eproto__INCLUDED
 
-#include "message/accounts_service.pb.h"
+#include "./message/accounts_service.pb.h"
 
 #include <functional>
 #include <grpcpp/generic/async_generic_service.h>
@@ -24,7 +24,6 @@
 #include <grpcpp/support/status.h>
 #include <grpcpp/support/stub_options.h>
 #include <grpcpp/support/sync_stream.h>
-#include <grpcpp/ports_def.inc>
 
 namespace accounts {
 
@@ -3771,5 +3770,4 @@ class StudentProfileService final {
 }  // namespace accounts
 
 
-#include <grpcpp/ports_undef.inc>
 #endif  // GRPC_accounts_5fservice_2eproto__INCLUDED

@@ -1,12 +1,28 @@
 {
-    "name": "accounts-service",
-    "version": "0.1.0",
-    "dependencies": [
-      "nlohmann-json",
-      "libpqxx",
-      "crow",
-      "jwt-cpp",
-      "minio-cpp",
-      "openssl"
-    ]
-  }
+  "name": "accounts-service",
+  "version": "0.1.0",
+  "builtin-baseline": "89dc8be6dbcf18482a5a1bf86a2f4615c939b0fb",
+  "dependencies": [
+    "nlohmann-json",
+    "libpqxx",
+    "crow",
+    "jwt-cpp",
+    "minio-cpp",
+    "openssl",
+    {
+      "name": "protobuf",
+      "version>=": "5.26.1"
+    },
+    {
+      "name": "grpc",
+      "version>=": "1.68.0",
+      "features": ["codegen"]
+    }
+  ],
+  "overrides": [
+    {
+      "name": "protobuf",
+      "version": "5.26.1"
+    }
+  ]
+}
