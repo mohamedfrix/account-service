@@ -1,5 +1,5 @@
 # Build stage
-FROM mohamedfrix/cpp-base-image:latest AS builder
+FROM mohamedfix/cpp-base-image:latest AS builder
 
 # Avoid prompts during package installation
 ENV DEBIAN_FRONTEND=noninteractive
@@ -10,8 +10,6 @@ ENV PATH="$MY_INSTALL_DIR/bin:$PATH"
 ENV LD_LIBRARY_PATH="$MY_INSTALL_DIR/lib:$MY_INSTALL_DIR/lib64"
 ENV PKG_CONFIG_PATH="$MY_INSTALL_DIR/lib/pkgconfig"
 
-# Ensure gRPC source is available
-RUN test -d /opt/grpc || (echo "gRPC source not found in base image" && exit 1)
 
 # Build application
 WORKDIR /app
