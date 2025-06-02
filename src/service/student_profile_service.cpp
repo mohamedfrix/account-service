@@ -87,7 +87,7 @@ std::tuple<bool, StudentProfile> StudentProfileService::updateStudentProfile(int
     return {true, updated_student_profile_result};
 }
 
-std::optional<StudentProfile> StudentProfileService::getStudentProfileById(int student_id) {
+std::optional<StudentProfile> StudentProfileService::getStudentProfileByStudentId(int student_id) {
     auto student_profile_opt = StudentProfileRepo::findStudentProfileById(student_id);
     if (!student_profile_opt.has_value()) {
         std::cerr << "Student profile with id: " << student_id << " not found." << std::endl;

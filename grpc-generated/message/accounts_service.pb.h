@@ -28,7 +28,6 @@
 #include "google/protobuf/repeated_field.h"  // IWYU pragma: export
 #include "google/protobuf/extension_set.h"  // IWYU pragma: export
 #include "google/protobuf/unknown_field_set.h"
-#include "google/protobuf/struct.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Must be included last.
@@ -573,6 +572,203 @@ class UpdateSchoolResponse final : public ::google::protobuf::Message
                           ::google::protobuf::Arena* arena, const Impl_& from);
     ::google::protobuf::internal::ArenaStringPtr error_message_;
     bool success_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_accounts_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class StudentProfile final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:accounts.StudentProfile) */ {
+ public:
+  inline StudentProfile() : StudentProfile(nullptr) {}
+  ~StudentProfile() override;
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR StudentProfile(
+      ::google::protobuf::internal::ConstantInitialized);
+
+  inline StudentProfile(const StudentProfile& from) : StudentProfile(nullptr, from) {}
+  inline StudentProfile(StudentProfile&& from) noexcept
+      : StudentProfile(nullptr, std::move(from)) {}
+  inline StudentProfile& operator=(const StudentProfile& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline StudentProfile& operator=(StudentProfile&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const StudentProfile& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const StudentProfile* internal_default_instance() {
+    return reinterpret_cast<const StudentProfile*>(
+        &_StudentProfile_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 4;
+  friend void swap(StudentProfile& a, StudentProfile& b) { a.Swap(&b); }
+  inline void Swap(StudentProfile* other) {
+    if (other == this) return;
+#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
+#else   // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(StudentProfile* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  StudentProfile* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return ::google::protobuf::Message::DefaultConstruct<StudentProfile>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const StudentProfile& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const StudentProfile& from) { StudentProfile::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(
+      ::google::protobuf::MessageLite& to_msg,
+      const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(StudentProfile* other);
+ private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() { return "accounts.StudentProfile"; }
+
+ protected:
+  explicit StudentProfile(::google::protobuf::Arena* arena);
+  StudentProfile(::google::protobuf::Arena* arena, const StudentProfile& from);
+  StudentProfile(::google::protobuf::Arena* arena, StudentProfile&& from) noexcept
+      : StudentProfile(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::MessageLite::ClassData* GetClassData()
+      const final;
+
+ public:
+  ::google::protobuf::Metadata GetMetadata() const final;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kProfileDataFieldNumber = 3,
+    kIdFieldNumber = 1,
+    kStudentIdFieldNumber = 2,
+  };
+  // string profile_data = 3;
+  void clear_profile_data() ;
+  const std::string& profile_data() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_profile_data(Arg_&& arg, Args_... args);
+  std::string* mutable_profile_data();
+  PROTOBUF_NODISCARD std::string* release_profile_data();
+  void set_allocated_profile_data(std::string* value);
+
+  private:
+  const std::string& _internal_profile_data() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_profile_data(
+      const std::string& value);
+  std::string* _internal_mutable_profile_data();
+
+  public:
+  // int32 id = 1;
+  void clear_id() ;
+  ::int32_t id() const;
+  void set_id(::int32_t value);
+
+  private:
+  ::int32_t _internal_id() const;
+  void _internal_set_id(::int32_t value);
+
+  public:
+  // int32 student_id = 2;
+  void clear_student_id() ;
+  ::int32_t student_id() const;
+  void set_student_id(::int32_t value);
+
+  private:
+  ::int32_t _internal_student_id() const;
+  void _internal_set_student_id(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:accounts.StudentProfile)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      2, 3, 0,
+      44, 2>
+      _table_;
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(
+        ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena);
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena, const Impl_& from);
+    ::google::protobuf::internal::ArenaStringPtr profile_data_;
+    ::int32_t id_;
+    ::int32_t student_id_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -4382,6 +4578,193 @@ class DeleteResearcherRequest final : public ::google::protobuf::Message
 };
 // -------------------------------------------------------------------
 
+class CreateStudentProfileRequest final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:accounts.CreateStudentProfileRequest) */ {
+ public:
+  inline CreateStudentProfileRequest() : CreateStudentProfileRequest(nullptr) {}
+  ~CreateStudentProfileRequest() override;
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR CreateStudentProfileRequest(
+      ::google::protobuf::internal::ConstantInitialized);
+
+  inline CreateStudentProfileRequest(const CreateStudentProfileRequest& from) : CreateStudentProfileRequest(nullptr, from) {}
+  inline CreateStudentProfileRequest(CreateStudentProfileRequest&& from) noexcept
+      : CreateStudentProfileRequest(nullptr, std::move(from)) {}
+  inline CreateStudentProfileRequest& operator=(const CreateStudentProfileRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CreateStudentProfileRequest& operator=(CreateStudentProfileRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CreateStudentProfileRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CreateStudentProfileRequest* internal_default_instance() {
+    return reinterpret_cast<const CreateStudentProfileRequest*>(
+        &_CreateStudentProfileRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 41;
+  friend void swap(CreateStudentProfileRequest& a, CreateStudentProfileRequest& b) { a.Swap(&b); }
+  inline void Swap(CreateStudentProfileRequest* other) {
+    if (other == this) return;
+#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
+#else   // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CreateStudentProfileRequest* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CreateStudentProfileRequest* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return ::google::protobuf::Message::DefaultConstruct<CreateStudentProfileRequest>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const CreateStudentProfileRequest& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const CreateStudentProfileRequest& from) { CreateStudentProfileRequest::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(
+      ::google::protobuf::MessageLite& to_msg,
+      const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(CreateStudentProfileRequest* other);
+ private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() { return "accounts.CreateStudentProfileRequest"; }
+
+ protected:
+  explicit CreateStudentProfileRequest(::google::protobuf::Arena* arena);
+  CreateStudentProfileRequest(::google::protobuf::Arena* arena, const CreateStudentProfileRequest& from);
+  CreateStudentProfileRequest(::google::protobuf::Arena* arena, CreateStudentProfileRequest&& from) noexcept
+      : CreateStudentProfileRequest(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::MessageLite::ClassData* GetClassData()
+      const final;
+
+ public:
+  ::google::protobuf::Metadata GetMetadata() const final;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kProfileDataFieldNumber = 2,
+    kStudentIdFieldNumber = 1,
+  };
+  // optional string profile_data = 2;
+  bool has_profile_data() const;
+  void clear_profile_data() ;
+  const std::string& profile_data() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_profile_data(Arg_&& arg, Args_... args);
+  std::string* mutable_profile_data();
+  PROTOBUF_NODISCARD std::string* release_profile_data();
+  void set_allocated_profile_data(std::string* value);
+
+  private:
+  const std::string& _internal_profile_data() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_profile_data(
+      const std::string& value);
+  std::string* _internal_mutable_profile_data();
+
+  public:
+  // int32 student_id = 1;
+  void clear_student_id() ;
+  ::int32_t student_id() const;
+  void set_student_id(::int32_t value);
+
+  private:
+  ::int32_t _internal_student_id() const;
+  void _internal_set_student_id(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:accounts.CreateStudentProfileRequest)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      1, 2, 0,
+      57, 2>
+      _table_;
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(
+        ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena);
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena, const Impl_& from);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr profile_data_;
+    ::int32_t student_id_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_accounts_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
 class CreateSchoolRequest final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:accounts.CreateSchoolRequest) */ {
  public:
@@ -4837,6 +5220,179 @@ class UpdateStudentRequest final : public ::google::protobuf::Message
     ::accounts::FileData* secondary_profile_picture_;
     ::int32_t id_;
     ::int32_t school_id_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_accounts_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class UpdateStudentProfileRequest final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:accounts.UpdateStudentProfileRequest) */ {
+ public:
+  inline UpdateStudentProfileRequest() : UpdateStudentProfileRequest(nullptr) {}
+  ~UpdateStudentProfileRequest() override;
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR UpdateStudentProfileRequest(
+      ::google::protobuf::internal::ConstantInitialized);
+
+  inline UpdateStudentProfileRequest(const UpdateStudentProfileRequest& from) : UpdateStudentProfileRequest(nullptr, from) {}
+  inline UpdateStudentProfileRequest(UpdateStudentProfileRequest&& from) noexcept
+      : UpdateStudentProfileRequest(nullptr, std::move(from)) {}
+  inline UpdateStudentProfileRequest& operator=(const UpdateStudentProfileRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UpdateStudentProfileRequest& operator=(UpdateStudentProfileRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const UpdateStudentProfileRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const UpdateStudentProfileRequest* internal_default_instance() {
+    return reinterpret_cast<const UpdateStudentProfileRequest*>(
+        &_UpdateStudentProfileRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 45;
+  friend void swap(UpdateStudentProfileRequest& a, UpdateStudentProfileRequest& b) { a.Swap(&b); }
+  inline void Swap(UpdateStudentProfileRequest* other) {
+    if (other == this) return;
+#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
+#else   // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(UpdateStudentProfileRequest* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  UpdateStudentProfileRequest* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return ::google::protobuf::Message::DefaultConstruct<UpdateStudentProfileRequest>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const UpdateStudentProfileRequest& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const UpdateStudentProfileRequest& from) { UpdateStudentProfileRequest::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(
+      ::google::protobuf::MessageLite& to_msg,
+      const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(UpdateStudentProfileRequest* other);
+ private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() { return "accounts.UpdateStudentProfileRequest"; }
+
+ protected:
+  explicit UpdateStudentProfileRequest(::google::protobuf::Arena* arena);
+  UpdateStudentProfileRequest(::google::protobuf::Arena* arena, const UpdateStudentProfileRequest& from);
+  UpdateStudentProfileRequest(::google::protobuf::Arena* arena, UpdateStudentProfileRequest&& from) noexcept
+      : UpdateStudentProfileRequest(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::MessageLite::ClassData* GetClassData()
+      const final;
+
+ public:
+  ::google::protobuf::Metadata GetMetadata() const final;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kProfileFieldNumber = 1,
+  };
+  // .accounts.StudentProfile profile = 1;
+  bool has_profile() const;
+  void clear_profile() ;
+  const ::accounts::StudentProfile& profile() const;
+  PROTOBUF_NODISCARD ::accounts::StudentProfile* release_profile();
+  ::accounts::StudentProfile* mutable_profile();
+  void set_allocated_profile(::accounts::StudentProfile* value);
+  void unsafe_arena_set_allocated_profile(::accounts::StudentProfile* value);
+  ::accounts::StudentProfile* unsafe_arena_release_profile();
+
+  private:
+  const ::accounts::StudentProfile& _internal_profile() const;
+  ::accounts::StudentProfile* _internal_mutable_profile();
+
+  public:
+  // @@protoc_insertion_point(class_scope:accounts.UpdateStudentProfileRequest)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      0, 1, 1,
+      0, 2>
+      _table_;
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(
+        ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena);
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena, const Impl_& from);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    ::accounts::StudentProfile* profile_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -5434,203 +5990,6 @@ class UpdateResearcherRequest final : public ::google::protobuf::Message
     ::accounts::FileData* profile_picture_;
     ::accounts::FileData* secondary_profile_picture_;
     ::int32_t id_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_accounts_5fservice_2eproto;
-};
-// -------------------------------------------------------------------
-
-class StudentProfile final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:accounts.StudentProfile) */ {
- public:
-  inline StudentProfile() : StudentProfile(nullptr) {}
-  ~StudentProfile() override;
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR StudentProfile(
-      ::google::protobuf::internal::ConstantInitialized);
-
-  inline StudentProfile(const StudentProfile& from) : StudentProfile(nullptr, from) {}
-  inline StudentProfile(StudentProfile&& from) noexcept
-      : StudentProfile(nullptr, std::move(from)) {}
-  inline StudentProfile& operator=(const StudentProfile& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline StudentProfile& operator=(StudentProfile&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetArena() == from.GetArena()
-#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetArena() != nullptr
-#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const StudentProfile& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const StudentProfile* internal_default_instance() {
-    return reinterpret_cast<const StudentProfile*>(
-        &_StudentProfile_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages = 4;
-  friend void swap(StudentProfile& a, StudentProfile& b) { a.Swap(&b); }
-  inline void Swap(StudentProfile* other) {
-    if (other == this) return;
-#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
-#else   // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() == other->GetArena()) {
-#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(StudentProfile* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  StudentProfile* New(::google::protobuf::Arena* arena = nullptr) const final {
-    return ::google::protobuf::Message::DefaultConstruct<StudentProfile>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const StudentProfile& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const StudentProfile& from) { StudentProfile::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(
-      ::google::protobuf::MessageLite& to_msg,
-      const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target,
-      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* arena);
-  void SharedDtor();
-  void InternalSwap(StudentProfile* other);
- private:
-  friend class ::google::protobuf::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() { return "accounts.StudentProfile"; }
-
- protected:
-  explicit StudentProfile(::google::protobuf::Arena* arena);
-  StudentProfile(::google::protobuf::Arena* arena, const StudentProfile& from);
-  StudentProfile(::google::protobuf::Arena* arena, StudentProfile&& from) noexcept
-      : StudentProfile(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::MessageLite::ClassData* GetClassData()
-      const final;
-
- public:
-  ::google::protobuf::Metadata GetMetadata() const final;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kProfileDataFieldNumber = 3,
-    kIdFieldNumber = 1,
-    kStudentIdFieldNumber = 2,
-  };
-  // .google.protobuf.Struct profile_data = 3;
-  bool has_profile_data() const;
-  void clear_profile_data() ;
-  const ::google::protobuf::Struct& profile_data() const;
-  PROTOBUF_NODISCARD ::google::protobuf::Struct* release_profile_data();
-  ::google::protobuf::Struct* mutable_profile_data();
-  void set_allocated_profile_data(::google::protobuf::Struct* value);
-  void unsafe_arena_set_allocated_profile_data(::google::protobuf::Struct* value);
-  ::google::protobuf::Struct* unsafe_arena_release_profile_data();
-
-  private:
-  const ::google::protobuf::Struct& _internal_profile_data() const;
-  ::google::protobuf::Struct* _internal_mutable_profile_data();
-
-  public:
-  // int32 id = 1;
-  void clear_id() ;
-  ::int32_t id() const;
-  void set_id(::int32_t value);
-
-  private:
-  ::int32_t _internal_id() const;
-  void _internal_set_id(::int32_t value);
-
-  public:
-  // int32 student_id = 2;
-  void clear_student_id() ;
-  ::int32_t student_id() const;
-  void set_student_id(::int32_t value);
-
-  private:
-  ::int32_t _internal_student_id() const;
-  void _internal_set_student_id(::int32_t value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:accounts.StudentProfile)
- private:
-  class _Internal;
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
-      2, 3, 1,
-      0, 2>
-      _table_;
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(
-        ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena);
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena, const Impl_& from);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::Struct* profile_data_;
-    ::int32_t id_;
-    ::int32_t student_id_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -6350,6 +6709,209 @@ class ListResearchersResponse final : public ::google::protobuf::Message
     ::int32_t total_count_;
     bool success_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_accounts_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetStudentProfileResponse final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:accounts.GetStudentProfileResponse) */ {
+ public:
+  inline GetStudentProfileResponse() : GetStudentProfileResponse(nullptr) {}
+  ~GetStudentProfileResponse() override;
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR GetStudentProfileResponse(
+      ::google::protobuf::internal::ConstantInitialized);
+
+  inline GetStudentProfileResponse(const GetStudentProfileResponse& from) : GetStudentProfileResponse(nullptr, from) {}
+  inline GetStudentProfileResponse(GetStudentProfileResponse&& from) noexcept
+      : GetStudentProfileResponse(nullptr, std::move(from)) {}
+  inline GetStudentProfileResponse& operator=(const GetStudentProfileResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetStudentProfileResponse& operator=(GetStudentProfileResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetStudentProfileResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetStudentProfileResponse* internal_default_instance() {
+    return reinterpret_cast<const GetStudentProfileResponse*>(
+        &_GetStudentProfileResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 44;
+  friend void swap(GetStudentProfileResponse& a, GetStudentProfileResponse& b) { a.Swap(&b); }
+  inline void Swap(GetStudentProfileResponse* other) {
+    if (other == this) return;
+#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
+#else   // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetStudentProfileResponse* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetStudentProfileResponse* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return ::google::protobuf::Message::DefaultConstruct<GetStudentProfileResponse>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const GetStudentProfileResponse& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const GetStudentProfileResponse& from) { GetStudentProfileResponse::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(
+      ::google::protobuf::MessageLite& to_msg,
+      const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target,
+      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(GetStudentProfileResponse* other);
+ private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() { return "accounts.GetStudentProfileResponse"; }
+
+ protected:
+  explicit GetStudentProfileResponse(::google::protobuf::Arena* arena);
+  GetStudentProfileResponse(::google::protobuf::Arena* arena, const GetStudentProfileResponse& from);
+  GetStudentProfileResponse(::google::protobuf::Arena* arena, GetStudentProfileResponse&& from) noexcept
+      : GetStudentProfileResponse(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::MessageLite::ClassData* GetClassData()
+      const final;
+
+ public:
+  ::google::protobuf::Metadata GetMetadata() const final;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kErrorMessageFieldNumber = 2,
+    kProfileFieldNumber = 1,
+    kSuccessFieldNumber = 3,
+  };
+  // string error_message = 2;
+  void clear_error_message() ;
+  const std::string& error_message() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_error_message(Arg_&& arg, Args_... args);
+  std::string* mutable_error_message();
+  PROTOBUF_NODISCARD std::string* release_error_message();
+  void set_allocated_error_message(std::string* value);
+
+  private:
+  const std::string& _internal_error_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error_message(
+      const std::string& value);
+  std::string* _internal_mutable_error_message();
+
+  public:
+  // .accounts.StudentProfile profile = 1;
+  bool has_profile() const;
+  void clear_profile() ;
+  const ::accounts::StudentProfile& profile() const;
+  PROTOBUF_NODISCARD ::accounts::StudentProfile* release_profile();
+  ::accounts::StudentProfile* mutable_profile();
+  void set_allocated_profile(::accounts::StudentProfile* value);
+  void unsafe_arena_set_allocated_profile(::accounts::StudentProfile* value);
+  ::accounts::StudentProfile* unsafe_arena_release_profile();
+
+  private:
+  const ::accounts::StudentProfile& _internal_profile() const;
+  ::accounts::StudentProfile* _internal_mutable_profile();
+
+  public:
+  // bool success = 3;
+  void clear_success() ;
+  bool success() const;
+  void set_success(bool value);
+
+  private:
+  bool _internal_success() const;
+  void _internal_set_success(bool value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:accounts.GetStudentProfileResponse)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      2, 3, 1,
+      56, 2>
+      _table_;
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(
+        ::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena);
+    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                          ::google::protobuf::Arena* arena, const Impl_& from);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr error_message_;
+    ::accounts::StudentProfile* profile_;
+    bool success_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -7419,23 +7981,23 @@ class CreateStudentRequest final : public ::google::protobuf::Message
 };
 // -------------------------------------------------------------------
 
-class CreateStudentProfileRequest final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:accounts.CreateStudentProfileRequest) */ {
+class CreateStudentProfileResponse final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:accounts.CreateStudentProfileResponse) */ {
  public:
-  inline CreateStudentProfileRequest() : CreateStudentProfileRequest(nullptr) {}
-  ~CreateStudentProfileRequest() override;
+  inline CreateStudentProfileResponse() : CreateStudentProfileResponse(nullptr) {}
+  ~CreateStudentProfileResponse() override;
   template <typename = void>
-  explicit PROTOBUF_CONSTEXPR CreateStudentProfileRequest(
+  explicit PROTOBUF_CONSTEXPR CreateStudentProfileResponse(
       ::google::protobuf::internal::ConstantInitialized);
 
-  inline CreateStudentProfileRequest(const CreateStudentProfileRequest& from) : CreateStudentProfileRequest(nullptr, from) {}
-  inline CreateStudentProfileRequest(CreateStudentProfileRequest&& from) noexcept
-      : CreateStudentProfileRequest(nullptr, std::move(from)) {}
-  inline CreateStudentProfileRequest& operator=(const CreateStudentProfileRequest& from) {
+  inline CreateStudentProfileResponse(const CreateStudentProfileResponse& from) : CreateStudentProfileResponse(nullptr, from) {}
+  inline CreateStudentProfileResponse(CreateStudentProfileResponse&& from) noexcept
+      : CreateStudentProfileResponse(nullptr, std::move(from)) {}
+  inline CreateStudentProfileResponse& operator=(const CreateStudentProfileResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline CreateStudentProfileRequest& operator=(CreateStudentProfileRequest&& from) noexcept {
+  inline CreateStudentProfileResponse& operator=(CreateStudentProfileResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetArena() == from.GetArena()
 #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -7467,16 +8029,16 @@ class CreateStudentProfileRequest final : public ::google::protobuf::Message
   static const ::google::protobuf::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const CreateStudentProfileRequest& default_instance() {
+  static const CreateStudentProfileResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const CreateStudentProfileRequest* internal_default_instance() {
-    return reinterpret_cast<const CreateStudentProfileRequest*>(
-        &_CreateStudentProfileRequest_default_instance_);
+  static inline const CreateStudentProfileResponse* internal_default_instance() {
+    return reinterpret_cast<const CreateStudentProfileResponse*>(
+        &_CreateStudentProfileResponse_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 41;
-  friend void swap(CreateStudentProfileRequest& a, CreateStudentProfileRequest& b) { a.Swap(&b); }
-  inline void Swap(CreateStudentProfileRequest* other) {
+  static constexpr int kIndexInFileMessages = 42;
+  friend void swap(CreateStudentProfileResponse& a, CreateStudentProfileResponse& b) { a.Swap(&b); }
+  inline void Swap(CreateStudentProfileResponse* other) {
     if (other == this) return;
 #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetArena() != nullptr && GetArena() == other->GetArena()) {
@@ -7488,7 +8050,7 @@ class CreateStudentProfileRequest final : public ::google::protobuf::Message
       ::google::protobuf::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(CreateStudentProfileRequest* other) {
+  void UnsafeArenaSwap(CreateStudentProfileResponse* other) {
     if (other == this) return;
     ABSL_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -7496,13 +8058,13 @@ class CreateStudentProfileRequest final : public ::google::protobuf::Message
 
   // implements Message ----------------------------------------------
 
-  CreateStudentProfileRequest* New(::google::protobuf::Arena* arena = nullptr) const final {
-    return ::google::protobuf::Message::DefaultConstruct<CreateStudentProfileRequest>(arena);
+  CreateStudentProfileResponse* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return ::google::protobuf::Message::DefaultConstruct<CreateStudentProfileResponse>(arena);
   }
   using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const CreateStudentProfileRequest& from);
+  void CopyFrom(const CreateStudentProfileResponse& from);
   using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const CreateStudentProfileRequest& from) { CreateStudentProfileRequest::MergeImpl(*this, from); }
+  void MergeFrom(const CreateStudentProfileResponse& from) { CreateStudentProfileResponse::MergeImpl(*this, from); }
 
   private:
   static void MergeImpl(
@@ -7523,16 +8085,16 @@ class CreateStudentProfileRequest final : public ::google::protobuf::Message
   private:
   void SharedCtor(::google::protobuf::Arena* arena);
   void SharedDtor();
-  void InternalSwap(CreateStudentProfileRequest* other);
+  void InternalSwap(CreateStudentProfileResponse* other);
  private:
   friend class ::google::protobuf::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() { return "accounts.CreateStudentProfileRequest"; }
+  static ::absl::string_view FullMessageName() { return "accounts.CreateStudentProfileResponse"; }
 
  protected:
-  explicit CreateStudentProfileRequest(::google::protobuf::Arena* arena);
-  CreateStudentProfileRequest(::google::protobuf::Arena* arena, const CreateStudentProfileRequest& from);
-  CreateStudentProfileRequest(::google::protobuf::Arena* arena, CreateStudentProfileRequest&& from) noexcept
-      : CreateStudentProfileRequest(arena) {
+  explicit CreateStudentProfileResponse(::google::protobuf::Arena* arena);
+  CreateStudentProfileResponse(::google::protobuf::Arena* arena, const CreateStudentProfileResponse& from);
+  CreateStudentProfileResponse(::google::protobuf::Arena* arena, CreateStudentProfileResponse&& from) noexcept
+      : CreateStudentProfileResponse(arena) {
     *this = ::std::move(from);
   }
   const ::google::protobuf::MessageLite::ClassData* GetClassData()
@@ -7544,41 +8106,58 @@ class CreateStudentProfileRequest final : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
   enum : int {
-    kProfileDataFieldNumber = 2,
-    kStudentIdFieldNumber = 1,
+    kErrorMessageFieldNumber = 3,
+    kProfileFieldNumber = 2,
+    kSuccessFieldNumber = 1,
   };
-  // .google.protobuf.Struct profile_data = 2;
-  bool has_profile_data() const;
-  void clear_profile_data() ;
-  const ::google::protobuf::Struct& profile_data() const;
-  PROTOBUF_NODISCARD ::google::protobuf::Struct* release_profile_data();
-  ::google::protobuf::Struct* mutable_profile_data();
-  void set_allocated_profile_data(::google::protobuf::Struct* value);
-  void unsafe_arena_set_allocated_profile_data(::google::protobuf::Struct* value);
-  ::google::protobuf::Struct* unsafe_arena_release_profile_data();
+  // string error_message = 3;
+  void clear_error_message() ;
+  const std::string& error_message() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_error_message(Arg_&& arg, Args_... args);
+  std::string* mutable_error_message();
+  PROTOBUF_NODISCARD std::string* release_error_message();
+  void set_allocated_error_message(std::string* value);
 
   private:
-  const ::google::protobuf::Struct& _internal_profile_data() const;
-  ::google::protobuf::Struct* _internal_mutable_profile_data();
+  const std::string& _internal_error_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error_message(
+      const std::string& value);
+  std::string* _internal_mutable_error_message();
 
   public:
-  // int32 student_id = 1;
-  void clear_student_id() ;
-  ::int32_t student_id() const;
-  void set_student_id(::int32_t value);
+  // .accounts.StudentProfile profile = 2;
+  bool has_profile() const;
+  void clear_profile() ;
+  const ::accounts::StudentProfile& profile() const;
+  PROTOBUF_NODISCARD ::accounts::StudentProfile* release_profile();
+  ::accounts::StudentProfile* mutable_profile();
+  void set_allocated_profile(::accounts::StudentProfile* value);
+  void unsafe_arena_set_allocated_profile(::accounts::StudentProfile* value);
+  ::accounts::StudentProfile* unsafe_arena_release_profile();
 
   private:
-  ::int32_t _internal_student_id() const;
-  void _internal_set_student_id(::int32_t value);
+  const ::accounts::StudentProfile& _internal_profile() const;
+  ::accounts::StudentProfile* _internal_mutable_profile();
 
   public:
-  // @@protoc_insertion_point(class_scope:accounts.CreateStudentProfileRequest)
+  // bool success = 1;
+  void clear_success() ;
+  bool success() const;
+  void set_success(bool value);
+
+  private:
+  bool _internal_success() const;
+  void _internal_set_success(bool value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:accounts.CreateStudentProfileResponse)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<
-      1, 2, 1,
-      0, 2>
+      2, 3, 1,
+      59, 2>
       _table_;
   friend class ::google::protobuf::MessageLite;
   friend class ::google::protobuf::Arena;
@@ -7595,8 +8174,9 @@ class CreateStudentProfileRequest final : public ::google::protobuf::Message
                           ::google::protobuf::Arena* arena, const Impl_& from);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::Struct* profile_data_;
-    ::int32_t student_id_;
+    ::google::protobuf::internal::ArenaStringPtr error_message_;
+    ::accounts::StudentProfile* profile_;
+    bool success_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -8433,179 +9013,6 @@ class UpdateStudentResponse final : public ::google::protobuf::Message
 };
 // -------------------------------------------------------------------
 
-class UpdateStudentProfileRequest final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:accounts.UpdateStudentProfileRequest) */ {
- public:
-  inline UpdateStudentProfileRequest() : UpdateStudentProfileRequest(nullptr) {}
-  ~UpdateStudentProfileRequest() override;
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR UpdateStudentProfileRequest(
-      ::google::protobuf::internal::ConstantInitialized);
-
-  inline UpdateStudentProfileRequest(const UpdateStudentProfileRequest& from) : UpdateStudentProfileRequest(nullptr, from) {}
-  inline UpdateStudentProfileRequest(UpdateStudentProfileRequest&& from) noexcept
-      : UpdateStudentProfileRequest(nullptr, std::move(from)) {}
-  inline UpdateStudentProfileRequest& operator=(const UpdateStudentProfileRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline UpdateStudentProfileRequest& operator=(UpdateStudentProfileRequest&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetArena() == from.GetArena()
-#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetArena() != nullptr
-#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const UpdateStudentProfileRequest& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const UpdateStudentProfileRequest* internal_default_instance() {
-    return reinterpret_cast<const UpdateStudentProfileRequest*>(
-        &_UpdateStudentProfileRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages = 45;
-  friend void swap(UpdateStudentProfileRequest& a, UpdateStudentProfileRequest& b) { a.Swap(&b); }
-  inline void Swap(UpdateStudentProfileRequest* other) {
-    if (other == this) return;
-#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
-#else   // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() == other->GetArena()) {
-#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(UpdateStudentProfileRequest* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  UpdateStudentProfileRequest* New(::google::protobuf::Arena* arena = nullptr) const final {
-    return ::google::protobuf::Message::DefaultConstruct<UpdateStudentProfileRequest>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const UpdateStudentProfileRequest& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const UpdateStudentProfileRequest& from) { UpdateStudentProfileRequest::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(
-      ::google::protobuf::MessageLite& to_msg,
-      const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target,
-      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* arena);
-  void SharedDtor();
-  void InternalSwap(UpdateStudentProfileRequest* other);
- private:
-  friend class ::google::protobuf::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() { return "accounts.UpdateStudentProfileRequest"; }
-
- protected:
-  explicit UpdateStudentProfileRequest(::google::protobuf::Arena* arena);
-  UpdateStudentProfileRequest(::google::protobuf::Arena* arena, const UpdateStudentProfileRequest& from);
-  UpdateStudentProfileRequest(::google::protobuf::Arena* arena, UpdateStudentProfileRequest&& from) noexcept
-      : UpdateStudentProfileRequest(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::MessageLite::ClassData* GetClassData()
-      const final;
-
- public:
-  ::google::protobuf::Metadata GetMetadata() const final;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kProfileFieldNumber = 1,
-  };
-  // .accounts.StudentProfile profile = 1;
-  bool has_profile() const;
-  void clear_profile() ;
-  const ::accounts::StudentProfile& profile() const;
-  PROTOBUF_NODISCARD ::accounts::StudentProfile* release_profile();
-  ::accounts::StudentProfile* mutable_profile();
-  void set_allocated_profile(::accounts::StudentProfile* value);
-  void unsafe_arena_set_allocated_profile(::accounts::StudentProfile* value);
-  ::accounts::StudentProfile* unsafe_arena_release_profile();
-
-  private:
-  const ::accounts::StudentProfile& _internal_profile() const;
-  ::accounts::StudentProfile* _internal_mutable_profile();
-
-  public:
-  // @@protoc_insertion_point(class_scope:accounts.UpdateStudentProfileRequest)
- private:
-  class _Internal;
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
-      0, 1, 1,
-      0, 2>
-      _table_;
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(
-        ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena);
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena, const Impl_& from);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    ::accounts::StudentProfile* profile_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_accounts_5fservice_2eproto;
-};
-// -------------------------------------------------------------------
-
 class ListStudentsResponse final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:accounts.ListStudentsResponse) */ {
  public:
@@ -9025,209 +9432,6 @@ class GetStudentResponse final : public ::google::protobuf::Message
 };
 // -------------------------------------------------------------------
 
-class GetStudentProfileResponse final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:accounts.GetStudentProfileResponse) */ {
- public:
-  inline GetStudentProfileResponse() : GetStudentProfileResponse(nullptr) {}
-  ~GetStudentProfileResponse() override;
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR GetStudentProfileResponse(
-      ::google::protobuf::internal::ConstantInitialized);
-
-  inline GetStudentProfileResponse(const GetStudentProfileResponse& from) : GetStudentProfileResponse(nullptr, from) {}
-  inline GetStudentProfileResponse(GetStudentProfileResponse&& from) noexcept
-      : GetStudentProfileResponse(nullptr, std::move(from)) {}
-  inline GetStudentProfileResponse& operator=(const GetStudentProfileResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline GetStudentProfileResponse& operator=(GetStudentProfileResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetArena() == from.GetArena()
-#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetArena() != nullptr
-#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const GetStudentProfileResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const GetStudentProfileResponse* internal_default_instance() {
-    return reinterpret_cast<const GetStudentProfileResponse*>(
-        &_GetStudentProfileResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages = 44;
-  friend void swap(GetStudentProfileResponse& a, GetStudentProfileResponse& b) { a.Swap(&b); }
-  inline void Swap(GetStudentProfileResponse* other) {
-    if (other == this) return;
-#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
-#else   // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() == other->GetArena()) {
-#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(GetStudentProfileResponse* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  GetStudentProfileResponse* New(::google::protobuf::Arena* arena = nullptr) const final {
-    return ::google::protobuf::Message::DefaultConstruct<GetStudentProfileResponse>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const GetStudentProfileResponse& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const GetStudentProfileResponse& from) { GetStudentProfileResponse::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(
-      ::google::protobuf::MessageLite& to_msg,
-      const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target,
-      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* arena);
-  void SharedDtor();
-  void InternalSwap(GetStudentProfileResponse* other);
- private:
-  friend class ::google::protobuf::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() { return "accounts.GetStudentProfileResponse"; }
-
- protected:
-  explicit GetStudentProfileResponse(::google::protobuf::Arena* arena);
-  GetStudentProfileResponse(::google::protobuf::Arena* arena, const GetStudentProfileResponse& from);
-  GetStudentProfileResponse(::google::protobuf::Arena* arena, GetStudentProfileResponse&& from) noexcept
-      : GetStudentProfileResponse(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::MessageLite::ClassData* GetClassData()
-      const final;
-
- public:
-  ::google::protobuf::Metadata GetMetadata() const final;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kErrorMessageFieldNumber = 2,
-    kProfileFieldNumber = 1,
-    kSuccessFieldNumber = 3,
-  };
-  // string error_message = 2;
-  void clear_error_message() ;
-  const std::string& error_message() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_error_message(Arg_&& arg, Args_... args);
-  std::string* mutable_error_message();
-  PROTOBUF_NODISCARD std::string* release_error_message();
-  void set_allocated_error_message(std::string* value);
-
-  private:
-  const std::string& _internal_error_message() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error_message(
-      const std::string& value);
-  std::string* _internal_mutable_error_message();
-
-  public:
-  // .accounts.StudentProfile profile = 1;
-  bool has_profile() const;
-  void clear_profile() ;
-  const ::accounts::StudentProfile& profile() const;
-  PROTOBUF_NODISCARD ::accounts::StudentProfile* release_profile();
-  ::accounts::StudentProfile* mutable_profile();
-  void set_allocated_profile(::accounts::StudentProfile* value);
-  void unsafe_arena_set_allocated_profile(::accounts::StudentProfile* value);
-  ::accounts::StudentProfile* unsafe_arena_release_profile();
-
-  private:
-  const ::accounts::StudentProfile& _internal_profile() const;
-  ::accounts::StudentProfile* _internal_mutable_profile();
-
-  public:
-  // bool success = 3;
-  void clear_success() ;
-  bool success() const;
-  void set_success(bool value);
-
-  private:
-  bool _internal_success() const;
-  void _internal_set_success(bool value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:accounts.GetStudentProfileResponse)
- private:
-  class _Internal;
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
-      2, 3, 1,
-      56, 2>
-      _table_;
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(
-        ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena);
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena, const Impl_& from);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::internal::ArenaStringPtr error_message_;
-    ::accounts::StudentProfile* profile_;
-    bool success_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_accounts_5fservice_2eproto;
-};
-// -------------------------------------------------------------------
-
 class GetStudentByUserIdResponse final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:accounts.GetStudentByUserIdResponse) */ {
  public:
@@ -9626,209 +9830,6 @@ class CreateStudentResponse final : public ::google::protobuf::Message
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::internal::ArenaStringPtr error_message_;
     ::accounts::Student* student_;
-    bool success_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_accounts_5fservice_2eproto;
-};
-// -------------------------------------------------------------------
-
-class CreateStudentProfileResponse final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:accounts.CreateStudentProfileResponse) */ {
- public:
-  inline CreateStudentProfileResponse() : CreateStudentProfileResponse(nullptr) {}
-  ~CreateStudentProfileResponse() override;
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR CreateStudentProfileResponse(
-      ::google::protobuf::internal::ConstantInitialized);
-
-  inline CreateStudentProfileResponse(const CreateStudentProfileResponse& from) : CreateStudentProfileResponse(nullptr, from) {}
-  inline CreateStudentProfileResponse(CreateStudentProfileResponse&& from) noexcept
-      : CreateStudentProfileResponse(nullptr, std::move(from)) {}
-  inline CreateStudentProfileResponse& operator=(const CreateStudentProfileResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline CreateStudentProfileResponse& operator=(CreateStudentProfileResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetArena() == from.GetArena()
-#ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetArena() != nullptr
-#endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const CreateStudentProfileResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const CreateStudentProfileResponse* internal_default_instance() {
-    return reinterpret_cast<const CreateStudentProfileResponse*>(
-        &_CreateStudentProfileResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages = 42;
-  friend void swap(CreateStudentProfileResponse& a, CreateStudentProfileResponse& b) { a.Swap(&b); }
-  inline void Swap(CreateStudentProfileResponse* other) {
-    if (other == this) return;
-#ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() != nullptr && GetArena() == other->GetArena()) {
-#else   // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() == other->GetArena()) {
-#endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(CreateStudentProfileResponse* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  CreateStudentProfileResponse* New(::google::protobuf::Arena* arena = nullptr) const final {
-    return ::google::protobuf::Message::DefaultConstruct<CreateStudentProfileResponse>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const CreateStudentProfileResponse& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const CreateStudentProfileResponse& from) { CreateStudentProfileResponse::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(
-      ::google::protobuf::MessageLite& to_msg,
-      const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target,
-      ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* arena);
-  void SharedDtor();
-  void InternalSwap(CreateStudentProfileResponse* other);
- private:
-  friend class ::google::protobuf::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() { return "accounts.CreateStudentProfileResponse"; }
-
- protected:
-  explicit CreateStudentProfileResponse(::google::protobuf::Arena* arena);
-  CreateStudentProfileResponse(::google::protobuf::Arena* arena, const CreateStudentProfileResponse& from);
-  CreateStudentProfileResponse(::google::protobuf::Arena* arena, CreateStudentProfileResponse&& from) noexcept
-      : CreateStudentProfileResponse(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::MessageLite::ClassData* GetClassData()
-      const final;
-
- public:
-  ::google::protobuf::Metadata GetMetadata() const final;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kErrorMessageFieldNumber = 3,
-    kProfileFieldNumber = 2,
-    kSuccessFieldNumber = 1,
-  };
-  // string error_message = 3;
-  void clear_error_message() ;
-  const std::string& error_message() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_error_message(Arg_&& arg, Args_... args);
-  std::string* mutable_error_message();
-  PROTOBUF_NODISCARD std::string* release_error_message();
-  void set_allocated_error_message(std::string* value);
-
-  private:
-  const std::string& _internal_error_message() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_error_message(
-      const std::string& value);
-  std::string* _internal_mutable_error_message();
-
-  public:
-  // .accounts.StudentProfile profile = 2;
-  bool has_profile() const;
-  void clear_profile() ;
-  const ::accounts::StudentProfile& profile() const;
-  PROTOBUF_NODISCARD ::accounts::StudentProfile* release_profile();
-  ::accounts::StudentProfile* mutable_profile();
-  void set_allocated_profile(::accounts::StudentProfile* value);
-  void unsafe_arena_set_allocated_profile(::accounts::StudentProfile* value);
-  ::accounts::StudentProfile* unsafe_arena_release_profile();
-
-  private:
-  const ::accounts::StudentProfile& _internal_profile() const;
-  ::accounts::StudentProfile* _internal_mutable_profile();
-
-  public:
-  // bool success = 1;
-  void clear_success() ;
-  bool success() const;
-  void set_success(bool value);
-
-  private:
-  bool _internal_success() const;
-  void _internal_set_success(bool value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:accounts.CreateStudentProfileResponse)
- private:
-  class _Internal;
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
-      2, 3, 1,
-      59, 2>
-      _table_;
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(
-        ::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena);
-    inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                          ::google::protobuf::Arena* arena, const Impl_& from);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::internal::ArenaStringPtr error_message_;
-    ::accounts::StudentProfile* profile_;
     bool success_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -10868,94 +10869,53 @@ inline void StudentProfile::_internal_set_student_id(::int32_t value) {
   _impl_.student_id_ = value;
 }
 
-// .google.protobuf.Struct profile_data = 3;
-inline bool StudentProfile::has_profile_data() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
-  PROTOBUF_ASSUME(!value || _impl_.profile_data_ != nullptr);
-  return value;
+// string profile_data = 3;
+inline void StudentProfile::clear_profile_data() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.profile_data_.ClearToEmpty();
 }
-inline const ::google::protobuf::Struct& StudentProfile::_internal_profile_data() const {
-  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
-  const ::google::protobuf::Struct* p = _impl_.profile_data_;
-  return p != nullptr ? *p : reinterpret_cast<const ::google::protobuf::Struct&>(::google::protobuf::_Struct_default_instance_);
-}
-inline const ::google::protobuf::Struct& StudentProfile::profile_data() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline const std::string& StudentProfile::profile_data() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:accounts.StudentProfile.profile_data)
   return _internal_profile_data();
 }
-inline void StudentProfile::unsafe_arena_set_allocated_profile_data(::google::protobuf::Struct* value) {
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void StudentProfile::set_profile_data(Arg_&& arg,
+                                                     Args_... args) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.profile_data_);
-  }
-  _impl_.profile_data_ = reinterpret_cast<::google::protobuf::Struct*>(value);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000001u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000001u;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:accounts.StudentProfile.profile_data)
+  _impl_.profile_data_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:accounts.StudentProfile.profile_data)
 }
-inline ::google::protobuf::Struct* StudentProfile::release_profile_data() {
+inline std::string* StudentProfile::mutable_profile_data() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_profile_data();
+  // @@protoc_insertion_point(field_mutable:accounts.StudentProfile.profile_data)
+  return _s;
+}
+inline const std::string& StudentProfile::_internal_profile_data() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.profile_data_.Get();
+}
+inline void StudentProfile::_internal_set_profile_data(const std::string& value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-
-  _impl_._has_bits_[0] &= ~0x00000001u;
-  ::google::protobuf::Struct* released = _impl_.profile_data_;
-  _impl_.profile_data_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
-  released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-  if (GetArena() == nullptr) {
-    delete old;
-  }
-#else   // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArena() != nullptr) {
-    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return released;
+  _impl_.profile_data_.Set(value, GetArena());
 }
-inline ::google::protobuf::Struct* StudentProfile::unsafe_arena_release_profile_data() {
+inline std::string* StudentProfile::_internal_mutable_profile_data() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  return _impl_.profile_data_.Mutable( GetArena());
+}
+inline std::string* StudentProfile::release_profile_data() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   // @@protoc_insertion_point(field_release:accounts.StudentProfile.profile_data)
-
-  _impl_._has_bits_[0] &= ~0x00000001u;
-  ::google::protobuf::Struct* temp = _impl_.profile_data_;
-  _impl_.profile_data_ = nullptr;
-  return temp;
+  return _impl_.profile_data_.Release();
 }
-inline ::google::protobuf::Struct* StudentProfile::_internal_mutable_profile_data() {
+inline void StudentProfile::set_allocated_profile_data(std::string* value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  if (_impl_.profile_data_ == nullptr) {
-    auto* p = ::google::protobuf::Message::DefaultConstruct<::google::protobuf::Struct>(GetArena());
-    _impl_.profile_data_ = reinterpret_cast<::google::protobuf::Struct*>(p);
-  }
-  return _impl_.profile_data_;
-}
-inline ::google::protobuf::Struct* StudentProfile::mutable_profile_data() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  _impl_._has_bits_[0] |= 0x00000001u;
-  ::google::protobuf::Struct* _msg = _internal_mutable_profile_data();
-  // @@protoc_insertion_point(field_mutable:accounts.StudentProfile.profile_data)
-  return _msg;
-}
-inline void StudentProfile::set_allocated_profile_data(::google::protobuf::Struct* value) {
-  ::google::protobuf::Arena* message_arena = GetArena();
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  if (message_arena == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.profile_data_);
-  }
-
-  if (value != nullptr) {
-    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::google::protobuf::MessageLite*>(value)->GetArena();
-    if (message_arena != submessage_arena) {
-      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
-    }
-    _impl_._has_bits_[0] |= 0x00000001u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000001u;
-  }
-
-  _impl_.profile_data_ = reinterpret_cast<::google::protobuf::Struct*>(value);
+  _impl_.profile_data_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.profile_data_.IsDefault()) {
+          _impl_.profile_data_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:accounts.StudentProfile.profile_data)
 }
 
@@ -15567,94 +15527,74 @@ inline void CreateStudentProfileRequest::_internal_set_student_id(::int32_t valu
   _impl_.student_id_ = value;
 }
 
-// .google.protobuf.Struct profile_data = 2;
+// optional string profile_data = 2;
 inline bool CreateStudentProfileRequest::has_profile_data() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
-  PROTOBUF_ASSUME(!value || _impl_.profile_data_ != nullptr);
   return value;
 }
-inline const ::google::protobuf::Struct& CreateStudentProfileRequest::_internal_profile_data() const {
-  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
-  const ::google::protobuf::Struct* p = _impl_.profile_data_;
-  return p != nullptr ? *p : reinterpret_cast<const ::google::protobuf::Struct&>(::google::protobuf::_Struct_default_instance_);
+inline void CreateStudentProfileRequest::clear_profile_data() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.profile_data_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
 }
-inline const ::google::protobuf::Struct& CreateStudentProfileRequest::profile_data() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline const std::string& CreateStudentProfileRequest::profile_data() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:accounts.CreateStudentProfileRequest.profile_data)
   return _internal_profile_data();
 }
-inline void CreateStudentProfileRequest::unsafe_arena_set_allocated_profile_data(::google::protobuf::Struct* value) {
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void CreateStudentProfileRequest::set_profile_data(Arg_&& arg,
+                                                     Args_... args) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.profile_data_);
-  }
-  _impl_.profile_data_ = reinterpret_cast<::google::protobuf::Struct*>(value);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000001u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000001u;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:accounts.CreateStudentProfileRequest.profile_data)
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.profile_data_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:accounts.CreateStudentProfileRequest.profile_data)
 }
-inline ::google::protobuf::Struct* CreateStudentProfileRequest::release_profile_data() {
+inline std::string* CreateStudentProfileRequest::mutable_profile_data() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_profile_data();
+  // @@protoc_insertion_point(field_mutable:accounts.CreateStudentProfileRequest.profile_data)
+  return _s;
+}
+inline const std::string& CreateStudentProfileRequest::_internal_profile_data() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.profile_data_.Get();
+}
+inline void CreateStudentProfileRequest::_internal_set_profile_data(const std::string& value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-
-  _impl_._has_bits_[0] &= ~0x00000001u;
-  ::google::protobuf::Struct* released = _impl_.profile_data_;
-  _impl_.profile_data_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
-  released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-  if (GetArena() == nullptr) {
-    delete old;
-  }
-#else   // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArena() != nullptr) {
-    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return released;
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.profile_data_.Set(value, GetArena());
 }
-inline ::google::protobuf::Struct* CreateStudentProfileRequest::unsafe_arena_release_profile_data() {
+inline std::string* CreateStudentProfileRequest::_internal_mutable_profile_data() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.profile_data_.Mutable( GetArena());
+}
+inline std::string* CreateStudentProfileRequest::release_profile_data() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   // @@protoc_insertion_point(field_release:accounts.CreateStudentProfileRequest.profile_data)
-
+  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
+    return nullptr;
+  }
   _impl_._has_bits_[0] &= ~0x00000001u;
-  ::google::protobuf::Struct* temp = _impl_.profile_data_;
-  _impl_.profile_data_ = nullptr;
-  return temp;
+  auto* released = _impl_.profile_data_.Release();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.profile_data_.Set("", GetArena());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return released;
 }
-inline ::google::protobuf::Struct* CreateStudentProfileRequest::_internal_mutable_profile_data() {
+inline void CreateStudentProfileRequest::set_allocated_profile_data(std::string* value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  if (_impl_.profile_data_ == nullptr) {
-    auto* p = ::google::protobuf::Message::DefaultConstruct<::google::protobuf::Struct>(GetArena());
-    _impl_.profile_data_ = reinterpret_cast<::google::protobuf::Struct*>(p);
-  }
-  return _impl_.profile_data_;
-}
-inline ::google::protobuf::Struct* CreateStudentProfileRequest::mutable_profile_data() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  _impl_._has_bits_[0] |= 0x00000001u;
-  ::google::protobuf::Struct* _msg = _internal_mutable_profile_data();
-  // @@protoc_insertion_point(field_mutable:accounts.CreateStudentProfileRequest.profile_data)
-  return _msg;
-}
-inline void CreateStudentProfileRequest::set_allocated_profile_data(::google::protobuf::Struct* value) {
-  ::google::protobuf::Arena* message_arena = GetArena();
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  if (message_arena == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.profile_data_);
-  }
-
   if (value != nullptr) {
-    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::google::protobuf::MessageLite*>(value)->GetArena();
-    if (message_arena != submessage_arena) {
-      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
-    }
     _impl_._has_bits_[0] |= 0x00000001u;
   } else {
     _impl_._has_bits_[0] &= ~0x00000001u;
   }
-
-  _impl_.profile_data_ = reinterpret_cast<::google::protobuf::Struct*>(value);
+  _impl_.profile_data_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.profile_data_.IsDefault()) {
+          _impl_.profile_data_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:accounts.CreateStudentProfileRequest.profile_data)
 }
 

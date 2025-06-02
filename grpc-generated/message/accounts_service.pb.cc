@@ -2,7 +2,7 @@
 // source: accounts_service.proto
 // Protobuf C++ Version: 5.26.1
 
-#include "./message/accounts_service.pb.h"
+#include "message/accounts_service.pb.h"
 
 #include <algorithm>
 #include "google/protobuf/io/coded_stream.h"
@@ -66,6 +66,29 @@ struct UpdateSchoolResponseDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UpdateSchoolResponseDefaultTypeInternal _UpdateSchoolResponse_default_instance_;
+
+inline constexpr StudentProfile::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : profile_data_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        id_{0},
+        student_id_{0},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR StudentProfile::StudentProfile(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct StudentProfileDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR StudentProfileDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~StudentProfileDefaultTypeInternal() {}
+  union {
+    StudentProfile _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StudentProfileDefaultTypeInternal _StudentProfile_default_instance_;
 
 inline constexpr School::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -513,6 +536,28 @@ struct DeleteResearcherRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DeleteResearcherRequestDefaultTypeInternal _DeleteResearcherRequest_default_instance_;
 
+inline constexpr CreateStudentProfileRequest::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        profile_data_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        student_id_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR CreateStudentProfileRequest::CreateStudentProfileRequest(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct CreateStudentProfileRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CreateStudentProfileRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CreateStudentProfileRequestDefaultTypeInternal() {}
+  union {
+    CreateStudentProfileRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CreateStudentProfileRequestDefaultTypeInternal _CreateStudentProfileRequest_default_instance_;
+
 inline constexpr CreateSchoolRequest::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : name_(
@@ -567,6 +612,25 @@ struct UpdateStudentRequestDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UpdateStudentRequestDefaultTypeInternal _UpdateStudentRequest_default_instance_;
+
+inline constexpr UpdateStudentProfileRequest::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        profile_{nullptr} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR UpdateStudentProfileRequest::UpdateStudentProfileRequest(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct UpdateStudentProfileRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR UpdateStudentProfileRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~UpdateStudentProfileRequestDefaultTypeInternal() {}
+  union {
+    UpdateStudentProfileRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UpdateStudentProfileRequestDefaultTypeInternal _UpdateStudentProfileRequest_default_instance_;
 
 inline constexpr UpdateSchoolRequest::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -633,27 +697,6 @@ struct UpdateResearcherRequestDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UpdateResearcherRequestDefaultTypeInternal _UpdateResearcherRequest_default_instance_;
-
-inline constexpr StudentProfile::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
-      : _cached_size_{0},
-        profile_data_{nullptr},
-        id_{0},
-        student_id_{0} {}
-
-template <typename>
-PROTOBUF_CONSTEXPR StudentProfile::StudentProfile(::_pbi::ConstantInitialized)
-    : _impl_(::_pbi::ConstantInitialized()) {}
-struct StudentProfileDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR StudentProfileDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~StudentProfileDefaultTypeInternal() {}
-  union {
-    StudentProfile _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StudentProfileDefaultTypeInternal _StudentProfile_default_instance_;
 
 inline constexpr Student::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -738,6 +781,29 @@ struct ListResearchersResponseDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ListResearchersResponseDefaultTypeInternal _ListResearchersResponse_default_instance_;
+
+inline constexpr GetStudentProfileResponse::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        error_message_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        profile_{nullptr},
+        success_{false} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR GetStudentProfileResponse::GetStudentProfileResponse(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct GetStudentProfileResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetStudentProfileResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetStudentProfileResponseDefaultTypeInternal() {}
+  union {
+    GetStudentProfileResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetStudentProfileResponseDefaultTypeInternal _GetStudentProfileResponse_default_instance_;
 
 inline constexpr GetSchoolResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -859,25 +925,28 @@ struct CreateStudentRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CreateStudentRequestDefaultTypeInternal _CreateStudentRequest_default_instance_;
 
-inline constexpr CreateStudentProfileRequest::Impl_::Impl_(
+inline constexpr CreateStudentProfileResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
-        profile_data_{nullptr},
-        student_id_{0} {}
+        error_message_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        profile_{nullptr},
+        success_{false} {}
 
 template <typename>
-PROTOBUF_CONSTEXPR CreateStudentProfileRequest::CreateStudentProfileRequest(::_pbi::ConstantInitialized)
+PROTOBUF_CONSTEXPR CreateStudentProfileResponse::CreateStudentProfileResponse(::_pbi::ConstantInitialized)
     : _impl_(::_pbi::ConstantInitialized()) {}
-struct CreateStudentProfileRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR CreateStudentProfileRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~CreateStudentProfileRequestDefaultTypeInternal() {}
+struct CreateStudentProfileResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CreateStudentProfileResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CreateStudentProfileResponseDefaultTypeInternal() {}
   union {
-    CreateStudentProfileRequest _instance;
+    CreateStudentProfileResponse _instance;
   };
 };
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CreateStudentProfileRequestDefaultTypeInternal _CreateStudentProfileRequest_default_instance_;
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CreateStudentProfileResponseDefaultTypeInternal _CreateStudentProfileResponse_default_instance_;
 
 inline constexpr CreateSchoolResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -972,25 +1041,6 @@ struct UpdateStudentResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UpdateStudentResponseDefaultTypeInternal _UpdateStudentResponse_default_instance_;
 
-inline constexpr UpdateStudentProfileRequest::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
-      : _cached_size_{0},
-        profile_{nullptr} {}
-
-template <typename>
-PROTOBUF_CONSTEXPR UpdateStudentProfileRequest::UpdateStudentProfileRequest(::_pbi::ConstantInitialized)
-    : _impl_(::_pbi::ConstantInitialized()) {}
-struct UpdateStudentProfileRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR UpdateStudentProfileRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~UpdateStudentProfileRequestDefaultTypeInternal() {}
-  union {
-    UpdateStudentProfileRequest _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UpdateStudentProfileRequestDefaultTypeInternal _UpdateStudentProfileRequest_default_instance_;
-
 inline constexpr ListStudentsResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : students_{},
@@ -1038,29 +1088,6 @@ struct GetStudentResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetStudentResponseDefaultTypeInternal _GetStudentResponse_default_instance_;
 
-inline constexpr GetStudentProfileResponse::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
-      : _cached_size_{0},
-        error_message_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        profile_{nullptr},
-        success_{false} {}
-
-template <typename>
-PROTOBUF_CONSTEXPR GetStudentProfileResponse::GetStudentProfileResponse(::_pbi::ConstantInitialized)
-    : _impl_(::_pbi::ConstantInitialized()) {}
-struct GetStudentProfileResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetStudentProfileResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~GetStudentProfileResponseDefaultTypeInternal() {}
-  union {
-    GetStudentProfileResponse _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetStudentProfileResponseDefaultTypeInternal _GetStudentProfileResponse_default_instance_;
-
 inline constexpr GetStudentByUserIdResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
@@ -1106,29 +1133,6 @@ struct CreateStudentResponseDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CreateStudentResponseDefaultTypeInternal _CreateStudentResponse_default_instance_;
-
-inline constexpr CreateStudentProfileResponse::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
-      : _cached_size_{0},
-        error_message_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        profile_{nullptr},
-        success_{false} {}
-
-template <typename>
-PROTOBUF_CONSTEXPR CreateStudentProfileResponse::CreateStudentProfileResponse(::_pbi::ConstantInitialized)
-    : _impl_(::_pbi::ConstantInitialized()) {}
-struct CreateStudentProfileResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR CreateStudentProfileResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~CreateStudentProfileResponseDefaultTypeInternal() {}
-  union {
-    CreateStudentProfileResponse _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CreateStudentProfileResponseDefaultTypeInternal _CreateStudentProfileResponse_default_instance_;
 }  // namespace accounts
 static ::_pb::Metadata file_level_metadata_accounts_5fservice_2eproto[49];
 static constexpr const ::_pb::EnumDescriptor**
@@ -1199,7 +1203,7 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::accounts::Researcher, _impl_.profile_picture_path_),
         PROTOBUF_FIELD_OFFSET(::accounts::Researcher, _impl_.secondary_profile_picture_path_),
         PROTOBUF_FIELD_OFFSET(::accounts::Researcher, _impl_.created_at_),
-        PROTOBUF_FIELD_OFFSET(::accounts::StudentProfile, _impl_._has_bits_),
+        ~0u,  // no _has_bits_
         PROTOBUF_FIELD_OFFSET(::accounts::StudentProfile, _internal_metadata_),
         ~0u,  // no _extensions_
         ~0u,  // no _oneof_case_
@@ -1210,9 +1214,6 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::accounts::StudentProfile, _impl_.id_),
         PROTOBUF_FIELD_OFFSET(::accounts::StudentProfile, _impl_.student_id_),
         PROTOBUF_FIELD_OFFSET(::accounts::StudentProfile, _impl_.profile_data_),
-        ~0u,
-        ~0u,
-        0,
         PROTOBUF_FIELD_OFFSET(::accounts::CreateStudentRequest, _impl_._has_bits_),
         PROTOBUF_FIELD_OFFSET(::accounts::CreateStudentRequest, _internal_metadata_),
         ~0u,  // no _extensions_
@@ -1743,51 +1744,51 @@ static const ::_pbi::MigrationSchema
         {10, -1, -1, sizeof(::accounts::School)},
         {23, 39, -1, sizeof(::accounts::Student)},
         {47, -1, -1, sizeof(::accounts::Researcher)},
-        {61, 72, -1, sizeof(::accounts::StudentProfile)},
-        {75, 89, -1, sizeof(::accounts::CreateStudentRequest)},
-        {95, 106, -1, sizeof(::accounts::CreateStudentResponse)},
-        {109, -1, -1, sizeof(::accounts::GetStudentRequest)},
-        {118, 129, -1, sizeof(::accounts::GetStudentResponse)},
-        {132, -1, -1, sizeof(::accounts::GetStudentByUserIdRequest)},
-        {141, 152, -1, sizeof(::accounts::GetStudentByUserIdResponse)},
-        {155, 169, -1, sizeof(::accounts::UpdateStudentRequest)},
-        {175, 186, -1, sizeof(::accounts::UpdateStudentResponse)},
-        {189, -1, -1, sizeof(::accounts::DeleteStudentRequest)},
-        {198, -1, -1, sizeof(::accounts::DeleteStudentResponse)},
-        {208, -1, -1, sizeof(::accounts::ListStudentsRequest)},
-        {218, -1, -1, sizeof(::accounts::ListStudentsResponse)},
-        {230, -1, -1, sizeof(::accounts::CreateSchoolRequest)},
-        {241, 252, -1, sizeof(::accounts::CreateSchoolResponse)},
-        {255, -1, -1, sizeof(::accounts::GetSchoolRequest)},
-        {264, 275, -1, sizeof(::accounts::GetSchoolResponse)},
-        {278, -1, -1, sizeof(::accounts::GetSchoolByNameRequest)},
-        {287, 298, -1, sizeof(::accounts::GetSchoolByNameResponse)},
-        {301, 310, -1, sizeof(::accounts::UpdateSchoolRequest)},
-        {311, -1, -1, sizeof(::accounts::UpdateSchoolResponse)},
-        {321, -1, -1, sizeof(::accounts::DeleteSchoolRequest)},
-        {330, -1, -1, sizeof(::accounts::DeleteSchoolResponse)},
-        {340, -1, -1, sizeof(::accounts::ListSchoolsRequest)},
-        {350, -1, -1, sizeof(::accounts::ListSchoolsResponse)},
-        {362, 374, -1, sizeof(::accounts::CreateResearcherRequest)},
-        {378, 389, -1, sizeof(::accounts::CreateResearcherResponse)},
-        {392, -1, -1, sizeof(::accounts::GetResearcherRequest)},
-        {401, 412, -1, sizeof(::accounts::GetResearcherResponse)},
-        {415, -1, -1, sizeof(::accounts::GetResearcherByUserIdRequest)},
-        {424, 435, -1, sizeof(::accounts::GetResearcherByUserIdResponse)},
-        {438, 450, -1, sizeof(::accounts::UpdateResearcherRequest)},
-        {454, 465, -1, sizeof(::accounts::UpdateResearcherResponse)},
-        {468, -1, -1, sizeof(::accounts::DeleteResearcherRequest)},
-        {477, -1, -1, sizeof(::accounts::DeleteResearcherResponse)},
-        {487, -1, -1, sizeof(::accounts::ListResearchersRequest)},
-        {497, -1, -1, sizeof(::accounts::ListResearchersResponse)},
-        {509, 519, -1, sizeof(::accounts::CreateStudentProfileRequest)},
-        {521, 532, -1, sizeof(::accounts::CreateStudentProfileResponse)},
-        {535, -1, -1, sizeof(::accounts::GetStudentProfileRequest)},
-        {544, 555, -1, sizeof(::accounts::GetStudentProfileResponse)},
-        {558, 567, -1, sizeof(::accounts::UpdateStudentProfileRequest)},
-        {568, -1, -1, sizeof(::accounts::UpdateStudentProfileResponse)},
-        {578, -1, -1, sizeof(::accounts::DeleteStudentProfileRequest)},
-        {587, -1, -1, sizeof(::accounts::DeleteStudentProfileResponse)},
+        {61, -1, -1, sizeof(::accounts::StudentProfile)},
+        {72, 86, -1, sizeof(::accounts::CreateStudentRequest)},
+        {92, 103, -1, sizeof(::accounts::CreateStudentResponse)},
+        {106, -1, -1, sizeof(::accounts::GetStudentRequest)},
+        {115, 126, -1, sizeof(::accounts::GetStudentResponse)},
+        {129, -1, -1, sizeof(::accounts::GetStudentByUserIdRequest)},
+        {138, 149, -1, sizeof(::accounts::GetStudentByUserIdResponse)},
+        {152, 166, -1, sizeof(::accounts::UpdateStudentRequest)},
+        {172, 183, -1, sizeof(::accounts::UpdateStudentResponse)},
+        {186, -1, -1, sizeof(::accounts::DeleteStudentRequest)},
+        {195, -1, -1, sizeof(::accounts::DeleteStudentResponse)},
+        {205, -1, -1, sizeof(::accounts::ListStudentsRequest)},
+        {215, -1, -1, sizeof(::accounts::ListStudentsResponse)},
+        {227, -1, -1, sizeof(::accounts::CreateSchoolRequest)},
+        {238, 249, -1, sizeof(::accounts::CreateSchoolResponse)},
+        {252, -1, -1, sizeof(::accounts::GetSchoolRequest)},
+        {261, 272, -1, sizeof(::accounts::GetSchoolResponse)},
+        {275, -1, -1, sizeof(::accounts::GetSchoolByNameRequest)},
+        {284, 295, -1, sizeof(::accounts::GetSchoolByNameResponse)},
+        {298, 307, -1, sizeof(::accounts::UpdateSchoolRequest)},
+        {308, -1, -1, sizeof(::accounts::UpdateSchoolResponse)},
+        {318, -1, -1, sizeof(::accounts::DeleteSchoolRequest)},
+        {327, -1, -1, sizeof(::accounts::DeleteSchoolResponse)},
+        {337, -1, -1, sizeof(::accounts::ListSchoolsRequest)},
+        {347, -1, -1, sizeof(::accounts::ListSchoolsResponse)},
+        {359, 371, -1, sizeof(::accounts::CreateResearcherRequest)},
+        {375, 386, -1, sizeof(::accounts::CreateResearcherResponse)},
+        {389, -1, -1, sizeof(::accounts::GetResearcherRequest)},
+        {398, 409, -1, sizeof(::accounts::GetResearcherResponse)},
+        {412, -1, -1, sizeof(::accounts::GetResearcherByUserIdRequest)},
+        {421, 432, -1, sizeof(::accounts::GetResearcherByUserIdResponse)},
+        {435, 447, -1, sizeof(::accounts::UpdateResearcherRequest)},
+        {451, 462, -1, sizeof(::accounts::UpdateResearcherResponse)},
+        {465, -1, -1, sizeof(::accounts::DeleteResearcherRequest)},
+        {474, -1, -1, sizeof(::accounts::DeleteResearcherResponse)},
+        {484, -1, -1, sizeof(::accounts::ListResearchersRequest)},
+        {494, -1, -1, sizeof(::accounts::ListResearchersResponse)},
+        {506, 516, -1, sizeof(::accounts::CreateStudentProfileRequest)},
+        {518, 529, -1, sizeof(::accounts::CreateStudentProfileResponse)},
+        {532, -1, -1, sizeof(::accounts::GetStudentProfileRequest)},
+        {541, 552, -1, sizeof(::accounts::GetStudentProfileResponse)},
+        {555, 564, -1, sizeof(::accounts::UpdateStudentProfileRequest)},
+        {565, -1, -1, sizeof(::accounts::UpdateStudentProfileResponse)},
+        {575, -1, -1, sizeof(::accounts::DeleteStudentProfileRequest)},
+        {584, -1, -1, sizeof(::accounts::DeleteStudentProfileResponse)},
 };
 static const ::_pb::Message* const file_default_instances[] = {
     &::accounts::_FileData_default_instance_._instance,
@@ -1842,191 +1843,186 @@ static const ::_pb::Message* const file_default_instances[] = {
 };
 const char descriptor_table_protodef_accounts_5fservice_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
-    "\n\026accounts_service.proto\022\010accounts\032\034goog"
-    "le/protobuf/struct.proto\"1\n\010FileData\022\017\n\007"
-    "content\030\001 \001(\014\022\024\n\014content_type\030\002 \001(\t\"[\n\006S"
-    "chool\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\021\n\tname_"
-    "abbr\030\003 \001(\t\022\020\n\010location\030\004 \001(\t\022\022\n\ncreated_"
-    "at\030\005 \001(\t\"\313\001\n\007Student\022\n\n\002id\030\001 \001(\005\022\017\n\007user"
-    "_id\030\002 \001(\005\022 \n\006school\030\003 \001(\0132\020.accounts.Sch"
-    "ool\022\027\n\017graduation_year\030\004 \001(\t\022\016\n\006wilaya\030\005"
-    " \001(\t\022\034\n\024profile_picture_path\030\006 \001(\t\022&\n\036se"
-    "condary_profile_picture_path\030\007 \001(\t\022\022\n\ncr"
-    "eated_at\030\010 \001(\t\"\223\001\n\nResearcher\022\n\n\002id\030\001 \001("
-    "\005\022\017\n\007user_id\030\002 \001(\005\022\016\n\006wilaya\030\003 \001(\t\022\034\n\024pr"
-    "ofile_picture_path\030\004 \001(\t\022&\n\036secondary_pr"
-    "ofile_picture_path\030\005 \001(\t\022\022\n\ncreated_at\030\006"
-    " \001(\t\"_\n\016StudentProfile\022\n\n\002id\030\001 \001(\005\022\022\n\nst"
-    "udent_id\030\002 \001(\005\022-\n\014profile_data\030\003 \001(\0132\027.g"
-    "oogle.protobuf.Struct\"\307\001\n\024CreateStudentR"
-    "equest\022\017\n\007user_id\030\001 \001(\005\022\021\n\tschool_id\030\002 \001"
-    "(\005\022\027\n\017graduation_year\030\003 \001(\t\022\016\n\006wilaya\030\004 "
-    "\001(\t\022+\n\017profile_picture\030\005 \001(\0132\022.accounts."
-    "FileData\0225\n\031secondary_profile_picture\030\006 "
-    "\001(\0132\022.accounts.FileData\"c\n\025CreateStudent"
-    "Response\022\017\n\007success\030\001 \001(\010\022\"\n\007student\030\002 \001"
-    "(\0132\021.accounts.Student\022\025\n\rerror_message\030\003"
-    " \001(\t\"\037\n\021GetStudentRequest\022\n\n\002id\030\001 \001(\005\"`\n"
-    "\022GetStudentResponse\022\"\n\007student\030\001 \001(\0132\021.a"
-    "ccounts.Student\022\025\n\rerror_message\030\002 \001(\t\022\017"
-    "\n\007success\030\003 \001(\010\",\n\031GetStudentByUserIdReq"
-    "uest\022\017\n\007user_id\030\001 \001(\005\"h\n\032GetStudentByUse"
-    "rIdResponse\022\"\n\007student\030\001 \001(\0132\021.accounts."
-    "Student\022\025\n\rerror_message\030\002 \001(\t\022\017\n\007succes"
-    "s\030\003 \001(\010\"\272\002\n\024UpdateStudentRequest\022\n\n\002id\030\001"
-    " \001(\005\022\026\n\tschool_id\030\002 \001(\005H\000\210\001\001\022\034\n\017graduati"
-    "on_year\030\003 \001(\tH\001\210\001\001\022\023\n\006wilaya\030\004 \001(\tH\002\210\001\001\022"
-    "0\n\017profile_picture\030\005 \001(\0132\022.accounts.File"
-    "DataH\003\210\001\001\022:\n\031secondary_profile_picture\030\006"
-    " \001(\0132\022.accounts.FileDataH\004\210\001\001B\014\n\n_school"
-    "_idB\022\n\020_graduation_yearB\t\n\007_wilayaB\022\n\020_p"
-    "rofile_pictureB\034\n\032_secondary_profile_pic"
-    "ture\"c\n\025UpdateStudentResponse\022\017\n\007success"
-    "\030\001 \001(\010\022\"\n\007student\030\002 \001(\0132\021.accounts.Stude"
-    "nt\022\025\n\rerror_message\030\003 \001(\t\"\"\n\024DeleteStude"
-    "ntRequest\022\n\n\002id\030\001 \001(\005\"\?\n\025DeleteStudentRe"
-    "sponse\022\017\n\007success\030\001 \001(\010\022\025\n\rerror_message"
-    "\030\002 \001(\t\"=\n\023ListStudentsRequest\022\021\n\tpage_si"
-    "ze\030\001 \001(\005\022\023\n\013page_number\030\002 \001(\005\"x\n\024ListStu"
-    "dentsResponse\022#\n\010students\030\001 \003(\0132\021.accoun"
-    "ts.Student\022\023\n\013total_count\030\002 \001(\005\022\025\n\rerror"
-    "_message\030\003 \001(\t\022\017\n\007success\030\004 \001(\010\"H\n\023Creat"
-    "eSchoolRequest\022\014\n\004name\030\001 \001(\t\022\021\n\tname_abb"
-    "r\030\002 \001(\t\022\020\n\010location\030\003 \001(\t\"`\n\024CreateSchoo"
-    "lResponse\022\017\n\007success\030\001 \001(\010\022 \n\006school\030\002 \001"
-    "(\0132\020.accounts.School\022\025\n\rerror_message\030\003 "
-    "\001(\t\"\036\n\020GetSchoolRequest\022\n\n\002id\030\001 \001(\005\"]\n\021G"
-    "etSchoolResponse\022 \n\006school\030\001 \001(\0132\020.accou"
-    "nts.School\022\025\n\rerror_message\030\002 \001(\t\022\017\n\007suc"
-    "cess\030\003 \001(\010\"&\n\026GetSchoolByNameRequest\022\014\n\004"
-    "name\030\001 \001(\t\"c\n\027GetSchoolByNameResponse\022 \n"
-    "\006school\030\001 \001(\0132\020.accounts.School\022\025\n\rerror"
-    "_message\030\002 \001(\t\022\017\n\007success\030\003 \001(\010\"7\n\023Updat"
-    "eSchoolRequest\022 \n\006school\030\001 \001(\0132\020.account"
-    "s.School\">\n\024UpdateSchoolResponse\022\017\n\007succ"
-    "ess\030\001 \001(\010\022\025\n\rerror_message\030\002 \001(\t\"!\n\023Dele"
-    "teSchoolRequest\022\n\n\002id\030\001 \001(\005\">\n\024DeleteSch"
-    "oolResponse\022\017\n\007success\030\001 \001(\010\022\025\n\rerror_me"
-    "ssage\030\002 \001(\t\"<\n\022ListSchoolsRequest\022\021\n\tpag"
-    "e_size\030\001 \001(\005\022\023\n\013page_number\030\002 \001(\005\"u\n\023Lis"
-    "tSchoolsResponse\022!\n\007schools\030\001 \003(\0132\020.acco"
-    "unts.School\022\023\n\013total_count\030\002 \001(\005\022\025\n\rerro"
-    "r_message\030\003 \001(\t\022\017\n\007success\030\004 \001(\010\"\236\001\n\027Cre"
-    "ateResearcherRequest\022\017\n\007user_id\030\001 \001(\005\022\016\n"
-    "\006wilaya\030\002 \001(\t\022+\n\017profile_picture\030\003 \001(\0132\022"
-    ".accounts.FileData\0225\n\031secondary_profile_"
-    "picture\030\004 \001(\0132\022.accounts.FileData\"l\n\030Cre"
-    "ateResearcherResponse\022\017\n\007success\030\001 \001(\010\022("
-    "\n\nresearcher\030\002 \001(\0132\024.accounts.Researcher"
-    "\022\025\n\rerror_message\030\003 \001(\t\"\"\n\024GetResearcher"
-    "Request\022\n\n\002id\030\001 \001(\005\"i\n\025GetResearcherResp"
-    "onse\022(\n\nresearcher\030\001 \001(\0132\024.accounts.Rese"
-    "archer\022\025\n\rerror_message\030\002 \001(\t\022\017\n\007success"
-    "\030\003 \001(\010\"/\n\034GetResearcherByUserIdRequest\022\017"
-    "\n\007user_id\030\001 \001(\005\"q\n\035GetResearcherByUserId"
-    "Response\022(\n\nresearcher\030\001 \001(\0132\024.accounts."
-    "Researcher\022\025\n\rerror_message\030\002 \001(\t\022\017\n\007suc"
-    "cess\030\003 \001(\010\"\345\001\n\027UpdateResearcherRequest\022\n"
-    "\n\002id\030\001 \001(\005\022\023\n\006wilaya\030\002 \001(\tH\000\210\001\001\0220\n\017profi"
-    "le_picture\030\003 \001(\0132\022.accounts.FileDataH\001\210\001"
-    "\001\022:\n\031secondary_profile_picture\030\004 \001(\0132\022.a"
-    "ccounts.FileDataH\002\210\001\001B\t\n\007_wilayaB\022\n\020_pro"
-    "file_pictureB\034\n\032_secondary_profile_pictu"
-    "re\"l\n\030UpdateResearcherResponse\022\017\n\007succes"
-    "s\030\001 \001(\010\022(\n\nresearcher\030\002 \001(\0132\024.accounts.R"
-    "esearcher\022\025\n\rerror_message\030\003 \001(\t\"%\n\027Dele"
-    "teResearcherRequest\022\n\n\002id\030\001 \001(\005\"B\n\030Delet"
-    "eResearcherResponse\022\017\n\007success\030\001 \001(\010\022\025\n\r"
-    "error_message\030\002 \001(\t\"@\n\026ListResearchersRe"
-    "quest\022\021\n\tpage_size\030\001 \001(\005\022\023\n\013page_number\030"
-    "\002 \001(\005\"\201\001\n\027ListResearchersResponse\022)\n\013res"
-    "earchers\030\001 \003(\0132\024.accounts.Researcher\022\023\n\013"
+    "\n\026accounts_service.proto\022\010accounts\"1\n\010Fi"
+    "leData\022\017\n\007content\030\001 \001(\014\022\024\n\014content_type\030"
+    "\002 \001(\t\"[\n\006School\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001("
+    "\t\022\021\n\tname_abbr\030\003 \001(\t\022\020\n\010location\030\004 \001(\t\022\022"
+    "\n\ncreated_at\030\005 \001(\t\"\313\001\n\007Student\022\n\n\002id\030\001 \001"
+    "(\005\022\017\n\007user_id\030\002 \001(\005\022 \n\006school\030\003 \001(\0132\020.ac"
+    "counts.School\022\027\n\017graduation_year\030\004 \001(\t\022\016"
+    "\n\006wilaya\030\005 \001(\t\022\034\n\024profile_picture_path\030\006"
+    " \001(\t\022&\n\036secondary_profile_picture_path\030\007"
+    " \001(\t\022\022\n\ncreated_at\030\010 \001(\t\"\223\001\n\nResearcher\022"
+    "\n\n\002id\030\001 \001(\005\022\017\n\007user_id\030\002 \001(\005\022\016\n\006wilaya\030\003"
+    " \001(\t\022\034\n\024profile_picture_path\030\004 \001(\t\022&\n\036se"
+    "condary_profile_picture_path\030\005 \001(\t\022\022\n\ncr"
+    "eated_at\030\006 \001(\t\"F\n\016StudentProfile\022\n\n\002id\030\001"
+    " \001(\005\022\022\n\nstudent_id\030\002 \001(\005\022\024\n\014profile_data"
+    "\030\003 \001(\t\"\307\001\n\024CreateStudentRequest\022\017\n\007user_"
+    "id\030\001 \001(\005\022\021\n\tschool_id\030\002 \001(\005\022\027\n\017graduatio"
+    "n_year\030\003 \001(\t\022\016\n\006wilaya\030\004 \001(\t\022+\n\017profile_"
+    "picture\030\005 \001(\0132\022.accounts.FileData\0225\n\031sec"
+    "ondary_profile_picture\030\006 \001(\0132\022.accounts."
+    "FileData\"c\n\025CreateStudentResponse\022\017\n\007suc"
+    "cess\030\001 \001(\010\022\"\n\007student\030\002 \001(\0132\021.accounts.S"
+    "tudent\022\025\n\rerror_message\030\003 \001(\t\"\037\n\021GetStud"
+    "entRequest\022\n\n\002id\030\001 \001(\005\"`\n\022GetStudentResp"
+    "onse\022\"\n\007student\030\001 \001(\0132\021.accounts.Student"
+    "\022\025\n\rerror_message\030\002 \001(\t\022\017\n\007success\030\003 \001(\010"
+    "\",\n\031GetStudentByUserIdRequest\022\017\n\007user_id"
+    "\030\001 \001(\005\"h\n\032GetStudentByUserIdResponse\022\"\n\007"
+    "student\030\001 \001(\0132\021.accounts.Student\022\025\n\rerro"
+    "r_message\030\002 \001(\t\022\017\n\007success\030\003 \001(\010\"\272\002\n\024Upd"
+    "ateStudentRequest\022\n\n\002id\030\001 \001(\005\022\026\n\tschool_"
+    "id\030\002 \001(\005H\000\210\001\001\022\034\n\017graduation_year\030\003 \001(\tH\001"
+    "\210\001\001\022\023\n\006wilaya\030\004 \001(\tH\002\210\001\001\0220\n\017profile_pict"
+    "ure\030\005 \001(\0132\022.accounts.FileDataH\003\210\001\001\022:\n\031se"
+    "condary_profile_picture\030\006 \001(\0132\022.accounts"
+    ".FileDataH\004\210\001\001B\014\n\n_school_idB\022\n\020_graduat"
+    "ion_yearB\t\n\007_wilayaB\022\n\020_profile_pictureB"
+    "\034\n\032_secondary_profile_picture\"c\n\025UpdateS"
+    "tudentResponse\022\017\n\007success\030\001 \001(\010\022\"\n\007stude"
+    "nt\030\002 \001(\0132\021.accounts.Student\022\025\n\rerror_mes"
+    "sage\030\003 \001(\t\"\"\n\024DeleteStudentRequest\022\n\n\002id"
+    "\030\001 \001(\005\"\?\n\025DeleteStudentResponse\022\017\n\007succe"
+    "ss\030\001 \001(\010\022\025\n\rerror_message\030\002 \001(\t\"=\n\023ListS"
+    "tudentsRequest\022\021\n\tpage_size\030\001 \001(\005\022\023\n\013pag"
+    "e_number\030\002 \001(\005\"x\n\024ListStudentsResponse\022#"
+    "\n\010students\030\001 \003(\0132\021.accounts.Student\022\023\n\013t"
+    "otal_count\030\002 \001(\005\022\025\n\rerror_message\030\003 \001(\t\022"
+    "\017\n\007success\030\004 \001(\010\"H\n\023CreateSchoolRequest\022"
+    "\014\n\004name\030\001 \001(\t\022\021\n\tname_abbr\030\002 \001(\t\022\020\n\010loca"
+    "tion\030\003 \001(\t\"`\n\024CreateSchoolResponse\022\017\n\007su"
+    "ccess\030\001 \001(\010\022 \n\006school\030\002 \001(\0132\020.accounts.S"
+    "chool\022\025\n\rerror_message\030\003 \001(\t\"\036\n\020GetSchoo"
+    "lRequest\022\n\n\002id\030\001 \001(\005\"]\n\021GetSchoolRespons"
+    "e\022 \n\006school\030\001 \001(\0132\020.accounts.School\022\025\n\re"
+    "rror_message\030\002 \001(\t\022\017\n\007success\030\003 \001(\010\"&\n\026G"
+    "etSchoolByNameRequest\022\014\n\004name\030\001 \001(\t\"c\n\027G"
+    "etSchoolByNameResponse\022 \n\006school\030\001 \001(\0132\020"
+    ".accounts.School\022\025\n\rerror_message\030\002 \001(\t\022"
+    "\017\n\007success\030\003 \001(\010\"7\n\023UpdateSchoolRequest\022"
+    " \n\006school\030\001 \001(\0132\020.accounts.School\">\n\024Upd"
+    "ateSchoolResponse\022\017\n\007success\030\001 \001(\010\022\025\n\rer"
+    "ror_message\030\002 \001(\t\"!\n\023DeleteSchoolRequest"
+    "\022\n\n\002id\030\001 \001(\005\">\n\024DeleteSchoolResponse\022\017\n\007"
+    "success\030\001 \001(\010\022\025\n\rerror_message\030\002 \001(\t\"<\n\022"
+    "ListSchoolsRequest\022\021\n\tpage_size\030\001 \001(\005\022\023\n"
+    "\013page_number\030\002 \001(\005\"u\n\023ListSchoolsRespons"
+    "e\022!\n\007schools\030\001 \003(\0132\020.accounts.School\022\023\n\013"
     "total_count\030\002 \001(\005\022\025\n\rerror_message\030\003 \001(\t"
-    "\022\017\n\007success\030\004 \001(\010\"`\n\033CreateStudentProfil"
-    "eRequest\022\022\n\nstudent_id\030\001 \001(\005\022-\n\014profile_"
-    "data\030\002 \001(\0132\027.google.protobuf.Struct\"q\n\034C"
-    "reateStudentProfileResponse\022\017\n\007success\030\001"
-    " \001(\010\022)\n\007profile\030\002 \001(\0132\030.accounts.Student"
-    "Profile\022\025\n\rerror_message\030\003 \001(\t\"&\n\030GetStu"
-    "dentProfileRequest\022\n\n\002id\030\001 \001(\005\"n\n\031GetStu"
-    "dentProfileResponse\022)\n\007profile\030\001 \001(\0132\030.a"
-    "ccounts.StudentProfile\022\025\n\rerror_message\030"
-    "\002 \001(\t\022\017\n\007success\030\003 \001(\010\"H\n\033UpdateStudentP"
-    "rofileRequest\022)\n\007profile\030\001 \001(\0132\030.account"
-    "s.StudentProfile\"F\n\034UpdateStudentProfile"
-    "Response\022\017\n\007success\030\001 \001(\010\022\025\n\rerror_messa"
-    "ge\030\002 \001(\t\")\n\033DeleteStudentProfileRequest\022"
-    "\n\n\002id\030\001 \001(\005\"F\n\034DeleteStudentProfileRespo"
-    "nse\022\017\n\007success\030\001 \001(\010\022\025\n\rerror_message\030\002 "
-    "\001(\t2\213\004\n\016StudentService\022R\n\rCreateStudent\022"
-    "\036.accounts.CreateStudentRequest\032\037.accoun"
-    "ts.CreateStudentResponse\"\000\022I\n\nGetStudent"
-    "\022\033.accounts.GetStudentRequest\032\034.accounts"
-    ".GetStudentResponse\"\000\022a\n\022GetStudentByUse"
-    "rId\022#.accounts.GetStudentByUserIdRequest"
-    "\032$.accounts.GetStudentByUserIdResponse\"\000"
-    "\022R\n\rUpdateStudent\022\036.accounts.UpdateStude"
-    "ntRequest\032\037.accounts.UpdateStudentRespon"
-    "se\"\000\022R\n\rDeleteStudent\022\036.accounts.DeleteS"
-    "tudentRequest\032\037.accounts.DeleteStudentRe"
-    "sponse\"\000\022O\n\014ListStudents\022\035.accounts.List"
-    "StudentsRequest\032\036.accounts.ListStudentsR"
-    "esponse\"\0002\362\003\n\rSchoolService\022O\n\014CreateSch"
-    "ool\022\035.accounts.CreateSchoolRequest\032\036.acc"
-    "ounts.CreateSchoolResponse\"\000\022F\n\tGetSchoo"
-    "l\022\032.accounts.GetSchoolRequest\032\033.accounts"
-    ".GetSchoolResponse\"\000\022X\n\017GetSchoolByName\022"
-    " .accounts.GetSchoolByNameRequest\032!.acco"
-    "unts.GetSchoolByNameResponse\"\000\022O\n\014Update"
-    "School\022\035.accounts.UpdateSchoolRequest\032\036."
-    "accounts.UpdateSchoolResponse\"\000\022O\n\014Delet"
-    "eSchool\022\035.accounts.DeleteSchoolRequest\032\036"
-    ".accounts.DeleteSchoolResponse\"\000\022L\n\013List"
-    "Schools\022\034.accounts.ListSchoolsRequest\032\035."
-    "accounts.ListSchoolsResponse\"\0002\304\004\n\021Resea"
-    "rcherService\022[\n\020CreateResearcher\022!.accou"
-    "nts.CreateResearcherRequest\032\".accounts.C"
-    "reateResearcherResponse\"\000\022R\n\rGetResearch"
-    "er\022\036.accounts.GetResearcherRequest\032\037.acc"
-    "ounts.GetResearcherResponse\"\000\022j\n\025GetRese"
-    "archerByUserId\022&.accounts.GetResearcherB"
-    "yUserIdRequest\032\'.accounts.GetResearcherB"
-    "yUserIdResponse\"\000\022[\n\020UpdateResearcher\022!."
-    "accounts.UpdateResearcherRequest\032\".accou"
-    "nts.UpdateResearcherResponse\"\000\022[\n\020Delete"
-    "Researcher\022!.accounts.DeleteResearcherRe"
-    "quest\032\".accounts.DeleteResearcherRespons"
-    "e\"\000\022X\n\017ListResearchers\022 .accounts.ListRe"
-    "searchersRequest\032!.accounts.ListResearch"
-    "ersResponse\"\0002\262\003\n\025StudentProfileService\022"
-    "g\n\024CreateStudentProfile\022%.accounts.Creat"
-    "eStudentProfileRequest\032&.accounts.Create"
-    "StudentProfileResponse\"\000\022^\n\021GetStudentPr"
-    "ofile\022\".accounts.GetStudentProfileReques"
-    "t\032#.accounts.GetStudentProfileResponse\"\000"
-    "\022g\n\024UpdateStudentProfile\022%.accounts.Upda"
-    "teStudentProfileRequest\032&.accounts.Updat"
-    "eStudentProfileResponse\"\000\022g\n\024DeleteStude"
-    "ntProfile\022%.accounts.DeleteStudentProfil"
-    "eRequest\032&.accounts.DeleteStudentProfile"
-    "Response\"\000BZ\n\024com.accounts.serviceB\024Acco"
-    "untsServiceProtoP\001Z*github.com/your-org/"
-    "accounts-service/protob\006proto3"
-};
-static const ::_pbi::DescriptorTable* const descriptor_table_accounts_5fservice_2eproto_deps[1] =
-    {
-        &::descriptor_table_google_2fprotobuf_2fstruct_2eproto,
+    "\022\017\n\007success\030\004 \001(\010\"\236\001\n\027CreateResearcherRe"
+    "quest\022\017\n\007user_id\030\001 \001(\005\022\016\n\006wilaya\030\002 \001(\t\022+"
+    "\n\017profile_picture\030\003 \001(\0132\022.accounts.FileD"
+    "ata\0225\n\031secondary_profile_picture\030\004 \001(\0132\022"
+    ".accounts.FileData\"l\n\030CreateResearcherRe"
+    "sponse\022\017\n\007success\030\001 \001(\010\022(\n\nresearcher\030\002 "
+    "\001(\0132\024.accounts.Researcher\022\025\n\rerror_messa"
+    "ge\030\003 \001(\t\"\"\n\024GetResearcherRequest\022\n\n\002id\030\001"
+    " \001(\005\"i\n\025GetResearcherResponse\022(\n\nresearc"
+    "her\030\001 \001(\0132\024.accounts.Researcher\022\025\n\rerror"
+    "_message\030\002 \001(\t\022\017\n\007success\030\003 \001(\010\"/\n\034GetRe"
+    "searcherByUserIdRequest\022\017\n\007user_id\030\001 \001(\005"
+    "\"q\n\035GetResearcherByUserIdResponse\022(\n\nres"
+    "earcher\030\001 \001(\0132\024.accounts.Researcher\022\025\n\re"
+    "rror_message\030\002 \001(\t\022\017\n\007success\030\003 \001(\010\"\345\001\n\027"
+    "UpdateResearcherRequest\022\n\n\002id\030\001 \001(\005\022\023\n\006w"
+    "ilaya\030\002 \001(\tH\000\210\001\001\0220\n\017profile_picture\030\003 \001("
+    "\0132\022.accounts.FileDataH\001\210\001\001\022:\n\031secondary_"
+    "profile_picture\030\004 \001(\0132\022.accounts.FileDat"
+    "aH\002\210\001\001B\t\n\007_wilayaB\022\n\020_profile_pictureB\034\n"
+    "\032_secondary_profile_picture\"l\n\030UpdateRes"
+    "earcherResponse\022\017\n\007success\030\001 \001(\010\022(\n\nrese"
+    "archer\030\002 \001(\0132\024.accounts.Researcher\022\025\n\rer"
+    "ror_message\030\003 \001(\t\"%\n\027DeleteResearcherReq"
+    "uest\022\n\n\002id\030\001 \001(\005\"B\n\030DeleteResearcherResp"
+    "onse\022\017\n\007success\030\001 \001(\010\022\025\n\rerror_message\030\002"
+    " \001(\t\"@\n\026ListResearchersRequest\022\021\n\tpage_s"
+    "ize\030\001 \001(\005\022\023\n\013page_number\030\002 \001(\005\"\201\001\n\027ListR"
+    "esearchersResponse\022)\n\013researchers\030\001 \003(\0132"
+    "\024.accounts.Researcher\022\023\n\013total_count\030\002 \001"
+    "(\005\022\025\n\rerror_message\030\003 \001(\t\022\017\n\007success\030\004 \001"
+    "(\010\"]\n\033CreateStudentProfileRequest\022\022\n\nstu"
+    "dent_id\030\001 \001(\005\022\031\n\014profile_data\030\002 \001(\tH\000\210\001\001"
+    "B\017\n\r_profile_data\"q\n\034CreateStudentProfil"
+    "eResponse\022\017\n\007success\030\001 \001(\010\022)\n\007profile\030\002 "
+    "\001(\0132\030.accounts.StudentProfile\022\025\n\rerror_m"
+    "essage\030\003 \001(\t\"&\n\030GetStudentProfileRequest"
+    "\022\n\n\002id\030\001 \001(\005\"n\n\031GetStudentProfileRespons"
+    "e\022)\n\007profile\030\001 \001(\0132\030.accounts.StudentPro"
+    "file\022\025\n\rerror_message\030\002 \001(\t\022\017\n\007success\030\003"
+    " \001(\010\"H\n\033UpdateStudentProfileRequest\022)\n\007p"
+    "rofile\030\001 \001(\0132\030.accounts.StudentProfile\"F"
+    "\n\034UpdateStudentProfileResponse\022\017\n\007succes"
+    "s\030\001 \001(\010\022\025\n\rerror_message\030\002 \001(\t\")\n\033Delete"
+    "StudentProfileRequest\022\n\n\002id\030\001 \001(\005\"F\n\034Del"
+    "eteStudentProfileResponse\022\017\n\007success\030\001 \001"
+    "(\010\022\025\n\rerror_message\030\002 \001(\t2\213\004\n\016StudentSer"
+    "vice\022R\n\rCreateStudent\022\036.accounts.CreateS"
+    "tudentRequest\032\037.accounts.CreateStudentRe"
+    "sponse\"\000\022I\n\nGetStudent\022\033.accounts.GetStu"
+    "dentRequest\032\034.accounts.GetStudentRespons"
+    "e\"\000\022a\n\022GetStudentByUserId\022#.accounts.Get"
+    "StudentByUserIdRequest\032$.accounts.GetStu"
+    "dentByUserIdResponse\"\000\022R\n\rUpdateStudent\022"
+    "\036.accounts.UpdateStudentRequest\032\037.accoun"
+    "ts.UpdateStudentResponse\"\000\022R\n\rDeleteStud"
+    "ent\022\036.accounts.DeleteStudentRequest\032\037.ac"
+    "counts.DeleteStudentResponse\"\000\022O\n\014ListSt"
+    "udents\022\035.accounts.ListStudentsRequest\032\036."
+    "accounts.ListStudentsResponse\"\0002\362\003\n\rScho"
+    "olService\022O\n\014CreateSchool\022\035.accounts.Cre"
+    "ateSchoolRequest\032\036.accounts.CreateSchool"
+    "Response\"\000\022F\n\tGetSchool\022\032.accounts.GetSc"
+    "hoolRequest\032\033.accounts.GetSchoolResponse"
+    "\"\000\022X\n\017GetSchoolByName\022 .accounts.GetScho"
+    "olByNameRequest\032!.accounts.GetSchoolByNa"
+    "meResponse\"\000\022O\n\014UpdateSchool\022\035.accounts."
+    "UpdateSchoolRequest\032\036.accounts.UpdateSch"
+    "oolResponse\"\000\022O\n\014DeleteSchool\022\035.accounts"
+    ".DeleteSchoolRequest\032\036.accounts.DeleteSc"
+    "hoolResponse\"\000\022L\n\013ListSchools\022\034.accounts"
+    ".ListSchoolsRequest\032\035.accounts.ListSchoo"
+    "lsResponse\"\0002\304\004\n\021ResearcherService\022[\n\020Cr"
+    "eateResearcher\022!.accounts.CreateResearch"
+    "erRequest\032\".accounts.CreateResearcherRes"
+    "ponse\"\000\022R\n\rGetResearcher\022\036.accounts.GetR"
+    "esearcherRequest\032\037.accounts.GetResearche"
+    "rResponse\"\000\022j\n\025GetResearcherByUserId\022&.a"
+    "ccounts.GetResearcherByUserIdRequest\032\'.a"
+    "ccounts.GetResearcherByUserIdResponse\"\000\022"
+    "[\n\020UpdateResearcher\022!.accounts.UpdateRes"
+    "earcherRequest\032\".accounts.UpdateResearch"
+    "erResponse\"\000\022[\n\020DeleteResearcher\022!.accou"
+    "nts.DeleteResearcherRequest\032\".accounts.D"
+    "eleteResearcherResponse\"\000\022X\n\017ListResearc"
+    "hers\022 .accounts.ListResearchersRequest\032!"
+    ".accounts.ListResearchersResponse\"\0002\262\003\n\025"
+    "StudentProfileService\022g\n\024CreateStudentPr"
+    "ofile\022%.accounts.CreateStudentProfileReq"
+    "uest\032&.accounts.CreateStudentProfileResp"
+    "onse\"\000\022^\n\021GetStudentProfile\022\".accounts.G"
+    "etStudentProfileRequest\032#.accounts.GetSt"
+    "udentProfileResponse\"\000\022g\n\024UpdateStudentP"
+    "rofile\022%.accounts.UpdateStudentProfileRe"
+    "quest\032&.accounts.UpdateStudentProfileRes"
+    "ponse\"\000\022g\n\024DeleteStudentProfile\022%.accoun"
+    "ts.DeleteStudentProfileRequest\032&.account"
+    "s.DeleteStudentProfileResponse\"\000BZ\n\024com."
+    "accounts.serviceB\024AccountsServiceProtoP\001"
+    "Z*github.com/your-org/accounts-service/p"
+    "rotob\006proto3"
 };
 static ::absl::once_flag descriptor_table_accounts_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_accounts_5fservice_2eproto = {
     false,
     false,
-    6790,
+    6732,
     descriptor_table_protodef_accounts_5fservice_2eproto,
     "accounts_service.proto",
     &descriptor_table_accounts_5fservice_2eproto_once,
-    descriptor_table_accounts_5fservice_2eproto_deps,
-    1,
+    nullptr,
+    0,
     49,
     schemas,
     file_default_instances,
@@ -3370,16 +3366,8 @@ void Researcher::InternalSwap(Researcher* PROTOBUF_RESTRICT other) {
 
 class StudentProfile::_Internal {
  public:
-  using HasBits = decltype(std::declval<StudentProfile>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(StudentProfile, _impl_._has_bits_);
 };
 
-void StudentProfile::clear_profile_data() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  if (_impl_.profile_data_ != nullptr) _impl_.profile_data_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000001u;
-}
 StudentProfile::StudentProfile(::google::protobuf::Arena* arena)
     : ::google::protobuf::Message(arena) {
   SharedCtor(arena);
@@ -3388,7 +3376,7 @@ StudentProfile::StudentProfile(::google::protobuf::Arena* arena)
 inline PROTOBUF_NDEBUG_INLINE StudentProfile::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
     const Impl_& from)
-      : _has_bits_{from._has_bits_},
+      : profile_data_(arena, from.profile_data_),
         _cached_size_{0} {}
 
 StudentProfile::StudentProfile(
@@ -3400,10 +3388,6 @@ StudentProfile::StudentProfile(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
-  ::uint32_t cached_has_bits = _impl_._has_bits_[0];
-  _impl_.profile_data_ = (cached_has_bits & 0x00000001u) ? ::google::protobuf::Message::CopyConstruct<::google::protobuf::Struct>(
-                              arena, *from._impl_.profile_data_)
-                        : nullptr;
   ::memcpy(reinterpret_cast<char *>(&_impl_) +
                offsetof(Impl_, id_),
            reinterpret_cast<const char *>(&from._impl_) +
@@ -3417,15 +3401,16 @@ StudentProfile::StudentProfile(
 inline PROTOBUF_NDEBUG_INLINE StudentProfile::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* arena)
-      : _cached_size_{0} {}
+      : profile_data_(arena),
+        _cached_size_{0} {}
 
 inline void StudentProfile::SharedCtor(::_pb::Arena* arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
   ::memset(reinterpret_cast<char *>(&_impl_) +
-               offsetof(Impl_, profile_data_),
+               offsetof(Impl_, id_),
            0,
            offsetof(Impl_, student_id_) -
-               offsetof(Impl_, profile_data_) +
+               offsetof(Impl_, id_) +
                sizeof(Impl_::student_id_));
 }
 StudentProfile::~StudentProfile() {
@@ -3435,7 +3420,7 @@ StudentProfile::~StudentProfile() {
 }
 inline void StudentProfile::SharedDtor() {
   ABSL_DCHECK(GetArena() == nullptr);
-  delete _impl_.profile_data_;
+  _impl_.profile_data_.Destroy();
   _impl_.~Impl_();
 }
 
@@ -3460,15 +3445,10 @@ PROTOBUF_NOINLINE void StudentProfile::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    ABSL_DCHECK(_impl_.profile_data_ != nullptr);
-    _impl_.profile_data_->Clear();
-  }
+  _impl_.profile_data_.ClearToEmpty();
   ::memset(&_impl_.id_, 0, static_cast<::size_t>(
       reinterpret_cast<char*>(&_impl_.student_id_) -
       reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.student_id_));
-  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
@@ -3480,17 +3460,17 @@ const char* StudentProfile::_InternalParse(
 
 
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 1, 0, 2> StudentProfile::_table_ = {
+const ::_pbi::TcParseTable<2, 3, 0, 44, 2> StudentProfile::_table_ = {
   {
-    PROTOBUF_FIELD_OFFSET(StudentProfile, _impl_._has_bits_),
+    0,  // no _has_bits_
     0, // no _extensions_
     3, 24,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
     4294967288,  // skipmap
     offsetof(decltype(_table_), field_entries),
     3,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
     &_StudentProfile_default_instance_._instance,
     ::_pbi::TcParser::GenericFallback,  // fallback
     #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
@@ -3504,24 +3484,27 @@ const ::_pbi::TcParseTable<2, 3, 1, 0, 2> StudentProfile::_table_ = {
     // int32 student_id = 2;
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(StudentProfile, _impl_.student_id_), 63>(),
      {16, 63, 0, PROTOBUF_FIELD_OFFSET(StudentProfile, _impl_.student_id_)}},
-    // .google.protobuf.Struct profile_data = 3;
-    {::_pbi::TcParser::FastMtS1,
-     {26, 0, 0, PROTOBUF_FIELD_OFFSET(StudentProfile, _impl_.profile_data_)}},
+    // string profile_data = 3;
+    {::_pbi::TcParser::FastUS1,
+     {26, 63, 0, PROTOBUF_FIELD_OFFSET(StudentProfile, _impl_.profile_data_)}},
   }}, {{
     65535, 65535
   }}, {{
     // int32 id = 1;
-    {PROTOBUF_FIELD_OFFSET(StudentProfile, _impl_.id_), -1, 0,
+    {PROTOBUF_FIELD_OFFSET(StudentProfile, _impl_.id_), 0, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
     // int32 student_id = 2;
-    {PROTOBUF_FIELD_OFFSET(StudentProfile, _impl_.student_id_), -1, 0,
+    {PROTOBUF_FIELD_OFFSET(StudentProfile, _impl_.student_id_), 0, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // .google.protobuf.Struct profile_data = 3;
-    {PROTOBUF_FIELD_OFFSET(StudentProfile, _impl_.profile_data_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::google::protobuf::Struct>()},
-  }}, {{
+    // string profile_data = 3;
+    {PROTOBUF_FIELD_OFFSET(StudentProfile, _impl_.profile_data_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+  }},
+  // no aux_entries
+  {{
+    "\27\0\0\14\0\0\0\0"
+    "accounts.StudentProfile"
+    "profile_data"
   }},
 };
 
@@ -3546,11 +3529,12 @@ const ::_pbi::TcParseTable<2, 3, 1, 0, 2> StudentProfile::_table_ = {
             stream, this->_internal_student_id(), target);
   }
 
-  cached_has_bits = _impl_._has_bits_[0];
-  // .google.protobuf.Struct profile_data = 3;
-  if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        3, *_impl_.profile_data_, _impl_.profile_data_->GetCachedSize(), target, stream);
+  // string profile_data = 3;
+  if (!this->_internal_profile_data().empty()) {
+    const std::string& _s = this->_internal_profile_data();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "accounts.StudentProfile.profile_data");
+    target = stream->WriteStringMaybeAliased(3, _s, target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3570,11 +3554,10 @@ const ::_pbi::TcParseTable<2, 3, 1, 0, 2> StudentProfile::_table_ = {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .google.protobuf.Struct profile_data = 3;
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    total_size +=
-        1 + ::google::protobuf::internal::WireFormatLite::MessageSize(*_impl_.profile_data_);
+  // string profile_data = 3;
+  if (!this->_internal_profile_data().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_profile_data());
   }
 
   // int32 id = 1;
@@ -3596,21 +3579,13 @@ const ::_pbi::TcParseTable<2, 3, 1, 0, 2> StudentProfile::_table_ = {
 void StudentProfile::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
   auto* const _this = static_cast<StudentProfile*>(&to_msg);
   auto& from = static_cast<const StudentProfile&>(from_msg);
-  ::google::protobuf::Arena* arena = _this->GetArena();
   // @@protoc_insertion_point(class_specific_merge_from_start:accounts.StudentProfile)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    ABSL_DCHECK(from._impl_.profile_data_ != nullptr);
-    if (_this->_impl_.profile_data_ == nullptr) {
-      _this->_impl_.profile_data_ =
-          ::google::protobuf::Message::CopyConstruct<::google::protobuf::Struct>(arena, *from._impl_.profile_data_);
-    } else {
-      _this->_impl_.profile_data_->MergeFrom(*from._impl_.profile_data_);
-    }
+  if (!from._internal_profile_data().empty()) {
+    _this->_internal_set_profile_data(from._internal_profile_data());
   }
   if (from._internal_id() != 0) {
     _this->_impl_.id_ = from._impl_.id_;
@@ -3618,7 +3593,6 @@ void StudentProfile::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::
   if (from._internal_student_id() != 0) {
     _this->_impl_.student_id_ = from._impl_.student_id_;
   }
-  _this->_impl_._has_bits_[0] |= cached_has_bits;
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -3635,14 +3609,16 @@ PROTOBUF_NOINLINE bool StudentProfile::IsInitialized() const {
 
 void StudentProfile::InternalSwap(StudentProfile* PROTOBUF_RESTRICT other) {
   using std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.profile_data_, &other->_impl_.profile_data_, arena);
   ::google::protobuf::internal::memswap<
       PROTOBUF_FIELD_OFFSET(StudentProfile, _impl_.student_id_)
       + sizeof(StudentProfile::_impl_.student_id_)
-      - PROTOBUF_FIELD_OFFSET(StudentProfile, _impl_.profile_data_)>(
-          reinterpret_cast<char*>(&_impl_.profile_data_),
-          reinterpret_cast<char*>(&other->_impl_.profile_data_));
+      - PROTOBUF_FIELD_OFFSET(StudentProfile, _impl_.id_)>(
+          reinterpret_cast<char*>(&_impl_.id_),
+          reinterpret_cast<char*>(&other->_impl_.id_));
 }
 
 ::google::protobuf::Metadata StudentProfile::GetMetadata() const {
@@ -12643,11 +12619,6 @@ class CreateStudentProfileRequest::_Internal {
     8 * PROTOBUF_FIELD_OFFSET(CreateStudentProfileRequest, _impl_._has_bits_);
 };
 
-void CreateStudentProfileRequest::clear_profile_data() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  if (_impl_.profile_data_ != nullptr) _impl_.profile_data_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000001u;
-}
 CreateStudentProfileRequest::CreateStudentProfileRequest(::google::protobuf::Arena* arena)
     : ::google::protobuf::Message(arena) {
   SharedCtor(arena);
@@ -12657,7 +12628,8 @@ inline PROTOBUF_NDEBUG_INLINE CreateStudentProfileRequest::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
     const Impl_& from)
       : _has_bits_{from._has_bits_},
-        _cached_size_{0} {}
+        _cached_size_{0},
+        profile_data_(arena, from.profile_data_) {}
 
 CreateStudentProfileRequest::CreateStudentProfileRequest(
     ::google::protobuf::Arena* arena,
@@ -12668,10 +12640,6 @@ CreateStudentProfileRequest::CreateStudentProfileRequest(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
-  ::uint32_t cached_has_bits = _impl_._has_bits_[0];
-  _impl_.profile_data_ = (cached_has_bits & 0x00000001u) ? ::google::protobuf::Message::CopyConstruct<::google::protobuf::Struct>(
-                              arena, *from._impl_.profile_data_)
-                        : nullptr;
   _impl_.student_id_ = from._impl_.student_id_;
 
   // @@protoc_insertion_point(copy_constructor:accounts.CreateStudentProfileRequest)
@@ -12679,16 +12647,12 @@ CreateStudentProfileRequest::CreateStudentProfileRequest(
 inline PROTOBUF_NDEBUG_INLINE CreateStudentProfileRequest::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* arena)
-      : _cached_size_{0} {}
+      : _cached_size_{0},
+        profile_data_(arena) {}
 
 inline void CreateStudentProfileRequest::SharedCtor(::_pb::Arena* arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
-  ::memset(reinterpret_cast<char *>(&_impl_) +
-               offsetof(Impl_, profile_data_),
-           0,
-           offsetof(Impl_, student_id_) -
-               offsetof(Impl_, profile_data_) +
-               sizeof(Impl_::student_id_));
+  _impl_.student_id_ = {};
 }
 CreateStudentProfileRequest::~CreateStudentProfileRequest() {
   // @@protoc_insertion_point(destructor:accounts.CreateStudentProfileRequest)
@@ -12697,7 +12661,7 @@ CreateStudentProfileRequest::~CreateStudentProfileRequest() {
 }
 inline void CreateStudentProfileRequest::SharedDtor() {
   ABSL_DCHECK(GetArena() == nullptr);
-  delete _impl_.profile_data_;
+  _impl_.profile_data_.Destroy();
   _impl_.~Impl_();
 }
 
@@ -12724,8 +12688,7 @@ PROTOBUF_NOINLINE void CreateStudentProfileRequest::Clear() {
 
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    ABSL_DCHECK(_impl_.profile_data_ != nullptr);
-    _impl_.profile_data_->Clear();
+    _impl_.profile_data_.ClearNonDefaultToEmpty();
   }
   _impl_.student_id_ = 0;
   _impl_._has_bits_.Clear();
@@ -12740,7 +12703,7 @@ const char* CreateStudentProfileRequest::_InternalParse(
 
 
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 1, 0, 2> CreateStudentProfileRequest::_table_ = {
+const ::_pbi::TcParseTable<1, 2, 0, 57, 2> CreateStudentProfileRequest::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(CreateStudentProfileRequest, _impl_._has_bits_),
     0, // no _extensions_
@@ -12749,16 +12712,16 @@ const ::_pbi::TcParseTable<1, 2, 1, 0, 2> CreateStudentProfileRequest::_table_ =
     4294967292,  // skipmap
     offsetof(decltype(_table_), field_entries),
     2,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
     &_CreateStudentProfileRequest_default_instance_._instance,
     ::_pbi::TcParser::GenericFallback,  // fallback
     #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
     ::_pbi::TcParser::GetTable<::accounts::CreateStudentProfileRequest>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // .google.protobuf.Struct profile_data = 2;
-    {::_pbi::TcParser::FastMtS1,
+    // optional string profile_data = 2;
+    {::_pbi::TcParser::FastUS1,
      {18, 0, 0, PROTOBUF_FIELD_OFFSET(CreateStudentProfileRequest, _impl_.profile_data_)}},
     // int32 student_id = 1;
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(CreateStudentProfileRequest, _impl_.student_id_), 63>(),
@@ -12769,12 +12732,15 @@ const ::_pbi::TcParseTable<1, 2, 1, 0, 2> CreateStudentProfileRequest::_table_ =
     // int32 student_id = 1;
     {PROTOBUF_FIELD_OFFSET(CreateStudentProfileRequest, _impl_.student_id_), -1, 0,
     (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // .google.protobuf.Struct profile_data = 2;
+    // optional string profile_data = 2;
     {PROTOBUF_FIELD_OFFSET(CreateStudentProfileRequest, _impl_.profile_data_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::google::protobuf::Struct>()},
-  }}, {{
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+  }},
+  // no aux_entries
+  {{
+    "\44\0\14\0\0\0\0\0"
+    "accounts.CreateStudentProfileRequest"
+    "profile_data"
   }},
 };
 
@@ -12793,10 +12759,12 @@ const ::_pbi::TcParseTable<1, 2, 1, 0, 2> CreateStudentProfileRequest::_table_ =
   }
 
   cached_has_bits = _impl_._has_bits_[0];
-  // .google.protobuf.Struct profile_data = 2;
+  // optional string profile_data = 2;
   if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        2, *_impl_.profile_data_, _impl_.profile_data_->GetCachedSize(), target, stream);
+    const std::string& _s = this->_internal_profile_data();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "accounts.CreateStudentProfileRequest.profile_data");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -12816,11 +12784,11 @@ const ::_pbi::TcParseTable<1, 2, 1, 0, 2> CreateStudentProfileRequest::_table_ =
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .google.protobuf.Struct profile_data = 2;
+  // optional string profile_data = 2;
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    total_size +=
-        1 + ::google::protobuf::internal::WireFormatLite::MessageSize(*_impl_.profile_data_);
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_profile_data());
   }
 
   // int32 student_id = 1;
@@ -12836,7 +12804,6 @@ const ::_pbi::TcParseTable<1, 2, 1, 0, 2> CreateStudentProfileRequest::_table_ =
 void CreateStudentProfileRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
   auto* const _this = static_cast<CreateStudentProfileRequest*>(&to_msg);
   auto& from = static_cast<const CreateStudentProfileRequest&>(from_msg);
-  ::google::protobuf::Arena* arena = _this->GetArena();
   // @@protoc_insertion_point(class_specific_merge_from_start:accounts.CreateStudentProfileRequest)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
@@ -12844,13 +12811,7 @@ void CreateStudentProfileRequest::MergeImpl(::google::protobuf::MessageLite& to_
 
   cached_has_bits = from._impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    ABSL_DCHECK(from._impl_.profile_data_ != nullptr);
-    if (_this->_impl_.profile_data_ == nullptr) {
-      _this->_impl_.profile_data_ =
-          ::google::protobuf::Message::CopyConstruct<::google::protobuf::Struct>(arena, *from._impl_.profile_data_);
-    } else {
-      _this->_impl_.profile_data_->MergeFrom(*from._impl_.profile_data_);
-    }
+    _this->_internal_set_profile_data(from._internal_profile_data());
   }
   if (from._internal_student_id() != 0) {
     _this->_impl_.student_id_ = from._impl_.student_id_;
@@ -12872,14 +12833,12 @@ PROTOBUF_NOINLINE bool CreateStudentProfileRequest::IsInitialized() const {
 
 void CreateStudentProfileRequest::InternalSwap(CreateStudentProfileRequest* PROTOBUF_RESTRICT other) {
   using std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(CreateStudentProfileRequest, _impl_.student_id_)
-      + sizeof(CreateStudentProfileRequest::_impl_.student_id_)
-      - PROTOBUF_FIELD_OFFSET(CreateStudentProfileRequest, _impl_.profile_data_)>(
-          reinterpret_cast<char*>(&_impl_.profile_data_),
-          reinterpret_cast<char*>(&other->_impl_.profile_data_));
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.profile_data_, &other->_impl_.profile_data_, arena);
+        swap(_impl_.student_id_, other->_impl_.student_id_);
 }
 
 ::google::protobuf::Metadata CreateStudentProfileRequest::GetMetadata() const {

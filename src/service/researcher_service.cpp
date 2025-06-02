@@ -9,7 +9,7 @@
 #include "util/minio.h"
 
 
-std::tuple<bool, Researcher> createResearcher(
+std::tuple<bool, Researcher> ResearcherService::createResearcher(
     int user_id, 
     const std::string& wilaya, 
     const std::optional<std::vector<uint8_t>>& profile_pic_data,

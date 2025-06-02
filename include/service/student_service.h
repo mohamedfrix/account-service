@@ -14,7 +14,7 @@ public:
                               const std::string& wilaya
                             );
 
-    static std::tuple<bool, Student> updateStudent(int student_id, 
+    static std::tuple<bool, Student> updateStudent(
                               int user_id, 
                               std::optional<int> school_id, 
                               const std::optional<std::string>& graduation_year, 

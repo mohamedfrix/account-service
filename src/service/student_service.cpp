@@ -60,7 +60,6 @@ std::tuple<bool, Student> StudentService::createStudent(int user_id,
 
 
 std::tuple<bool, Student> StudentService::updateStudent(
-    int student_id, 
     int user_id, 
     std::optional<int> school_id, 
     const std::optional<std::string>& graduation_year, 
@@ -73,7 +72,7 @@ std::tuple<bool, Student> StudentService::updateStudent(
    auto studentOpt = StudentRepo::findStudentByUserId(user_id);
    if (!studentOpt.has_value()){
        std::tuple<bool, Student> result = {false, Student()};
-       std::cerr << "Student with id: " << student_id << " not found." << std::endl;
+       std::cerr << "Student with User Id: " << user_id << " not found." << std::endl;
        return result;
    }
 
@@ -128,7 +127,7 @@ std::tuple<bool, Student> StudentService::updateStudent(
         std::cerr << "Failed to update student" << std::endl;
         return result;
     }
-    auto studentFormDb = StudentRepo::findStudentById(student_id);
+    auto studentFormDb = StudentRepo::findStudentById(student.getId());
     if (!studentFormDb.has_value()){
         std::tuple<bool, Student> result = {false, Student()};
         std::cerr << "Failed to update student: " << "can not get the student from db" << std::endl;

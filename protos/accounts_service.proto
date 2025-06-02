@@ -2,8 +2,6 @@ syntax = "proto3";
 
 package accounts;
 
-import "google/protobuf/struct.proto";
-
 // Service Options
 option go_package = "github.com/your-org/accounts-service/proto";
 option java_multiple_files = true;
@@ -59,7 +57,7 @@ message Researcher {
 message StudentProfile {
     int32 id = 1;                              // Unique identifier for the profile
     int32 student_id = 2;                      // Reference to the student account
-    google.protobuf.Struct profile_data = 3;   // Flexible JSON structure for profile data
+    string profile_data = 3;   // Flexible JSON structure for profile data
 }
 
 //------------------------------------------------------------------------------
@@ -92,8 +90,8 @@ message CreateStudentRequest {
     int32 school_id = 2;
     string graduation_year = 3;
     string wilaya = 4;
-    FileData profile_picture = 5;              // Optional profile picture file data
-    FileData secondary_profile_picture = 6;     // Optional secondary profile picture file data
+    optional FileData profile_picture = 5;              // Optional profile picture file data
+    optional FileData secondary_profile_picture = 6;     // Optional secondary profile picture file data
 }
 
 message CreateStudentResponse {
@@ -274,8 +272,8 @@ service ResearcherService {
 message CreateResearcherRequest {
     int32 user_id = 1;
     string wilaya = 2;
-    FileData profile_picture = 3;              // Optional profile picture file data
-    FileData secondary_profile_picture = 4;     // Optional secondary profile picture file data
+    optional FileData profile_picture = 3;              // Optional profile picture file data
+    optional FileData secondary_profile_picture = 4;     // Optional secondary profile picture file data
 }
 
 message CreateResearcherResponse {
@@ -359,7 +357,7 @@ service StudentProfileService {
 
 message CreateStudentProfileRequest {
     int32 student_id = 1;
-    google.protobuf.Struct profile_data = 2;
+    optional string profile_data = 2;
 }
 
 message CreateStudentProfileResponse {

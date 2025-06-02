@@ -29,7 +29,6 @@ set(SOURCES
     src/repository/school_repo.cpp
     src/repository/researcher_repo.cpp
     src/util/minio.cpp
-    src/grpc-service/school_service_impl.cpp
     grpc-generated/grpc/accounts_service.grpc.pb.cc
     grpc-generated/message/accounts_service.pb.cc
 
@@ -37,6 +36,11 @@ set(SOURCES
     src/service/student_service.cpp
     src/service/researcher_service.cpp
     src/service/student_profile_service.cpp
+
+    src/grpc-service/school_service_impl.cpp
+    src/grpc-service/student_service_impl.cpp
+    src/grpc-service/student_profile_service_impl.cpp
+    src/grpc-service/researcher_service_impl.cpp
 )
 
 # Add executable

@@ -4,7 +4,7 @@
 #ifndef GRPC_accounts_5fservice_2eproto__INCLUDED
 #define GRPC_accounts_5fservice_2eproto__INCLUDED
 
-#include "./message/accounts_service.pb.h"
+#include "message/accounts_service.pb.h"
 
 #include <functional>
 #include <grpcpp/generic/async_generic_service.h>

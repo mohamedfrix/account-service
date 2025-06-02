@@ -157,10 +157,10 @@ bool StudentRepo::updateStudent(const Student& student) {
             // "wilaya = $4, profile_picture_path = $5, secondary_profile_picture_path = $6 "
             // "WHERE id = $7",
             "UPDATE students SET graduation_year = $1, "
-            "wilaya = $2, profile_picture_path = $3, secondary_profile_picture_path = $4 "
-            "WHERE id = $5",
+            "wilaya = $2, profile_picture_path = $3, secondary_profile_picture_path = $4, school_id = $5 "
+            "WHERE id = $6",
             student.getGraduationYear(),
-            student.getWilaya(), student.getProfilePicturePath(), student.getSecondaryProfilePicturePath(),
+            student.getWilaya(), student.getProfilePicturePath(), student.getSecondaryProfilePicturePath(), student.getSchool().getId(),
             student.getId()
         );
         txn.commit();

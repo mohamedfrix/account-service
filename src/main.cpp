@@ -8,17 +8,25 @@
 #include "db/database.h"
 
 #include "grpc-service/school_service_impl.h"
-
+#include "grpc-service/student_service_impl.h"
+#include "grpc-service/student_profile_service_impl.h"
+#include "grpc-service/researcher_service_impl.h"
 #include <grpcpp/grpcpp.h>
 
 
 void RunGrpcServer() {
     std::string server_address("0.0.0.0:50050");
-    accounts::SchoolServiceImpl service;
+    accounts::SchoolServiceImpl school_service;
+    accounts::StudentServiceImpl student_service;
+    accounts::StudentProfileServiceImpl student_profile_service;
+    accounts::ResearcherServiceImpl researcher_service;
 
     grpc::ServerBuilder builder;
     builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
-    builder.RegisterService(&service);
+    builder.RegisterService(&school_service);
+    builder.RegisterService(&student_service);
+    builder.RegisterService(&student_profile_service);
+    builder.RegisterService(&researcher_service);
 
     std::cout << "Server starting on " << server_address << std::endl;
     std::unique_ptr<grpc::Server> server(builder.BuildAndStart());
